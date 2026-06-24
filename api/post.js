@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   const listUrl = `https://services.leadconnectorhq.com/blogs/posts/all` +
     `?locationId=${process.env.GHL_LOCATION_ID}` +
     `&blogId=${process.env.GHL_BLOG_ID}` +
-    `&limit=100&offset=0&status=PUBLISHED`;
+    `&limit=50&offset=0&status=PUBLISHED`;
 
   try {
     const [listRes, contentRes] = await Promise.all([
