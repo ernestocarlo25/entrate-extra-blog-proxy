@@ -65,7 +65,7 @@ const NEWSLETTER_HTML = (v) => `<!DOCTYPE html>
                   </tr>
                   <tr>
                     <td>
-                      <p style="margin:0;font-size:14px;color:#aaaaaa;line-height:1.7;padding-left:16px;">${v.radar[0].commento}</p>
+                      <p style="margin:0;font-size:15px;color:#aaaaaa;line-height:1.7;padding-left:16px;">${v.radar[0].commento}</p>
                     </td>
                   </tr>
                 </table>
@@ -84,7 +84,7 @@ const NEWSLETTER_HTML = (v) => `<!DOCTYPE html>
                   </tr>
                   <tr>
                     <td>
-                      <p style="margin:0;font-size:14px;color:#aaaaaa;line-height:1.7;padding-left:16px;">${v.radar[1].commento}</p>
+                      <p style="margin:0;font-size:15px;color:#aaaaaa;line-height:1.7;padding-left:16px;">${v.radar[1].commento}</p>
                     </td>
                   </tr>
                 </table>
@@ -103,7 +103,7 @@ const NEWSLETTER_HTML = (v) => `<!DOCTYPE html>
                   </tr>
                   <tr>
                     <td>
-                      <p style="margin:0;font-size:14px;color:#aaaaaa;line-height:1.7;padding-left:16px;">${v.radar[2].commento}</p>
+                      <p style="margin:0;font-size:15px;color:#aaaaaa;line-height:1.7;padding-left:16px;">${v.radar[2].commento}</p>
                     </td>
                   </tr>
                 </table>
@@ -126,7 +126,7 @@ const NEWSLETTER_HTML = (v) => `<!DOCTYPE html>
             <tr>
               <td style="padding:20px 0 0;">
                 <h3 style="margin:0 0 14px;font-size:18px;color:#ffffff;font-weight:600;line-height:1.4;">${v.strategiaTitolo}</h3>
-                <div style="font-size:15px;color:#e8e8e8;line-height:1.9;">${v.strategiaCorpo}</div>
+                <div style="font-size:16px;color:#e8e8e8;line-height:1.9;">${v.strategiaCorpo}</div>
               </td>
             </tr>
           </table>
