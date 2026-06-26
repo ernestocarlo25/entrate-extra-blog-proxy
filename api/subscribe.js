@@ -114,32 +114,36 @@ export default async function handler(req, res) {
     });
     const contactData = await contactRes.json();
 
-    const contactId = contactData.contact?.id;
-    if (!contactId && !contactRes.ok) {
-      const isDuplicate = contactRes.status === 422 ||
-        (contactData.message || '').toLowerCase().includes('duplicate');
-      if (!isDuplicate) return res.status(500).json({ error: contactData.message || 'Errore creazione contatto' });
+    // Get contactId — if duplicate, search for existing contact
+    let contactId = contactData.contact?.id;
+    if (!contactId) {
+      const searchRes = await fetch(
+        `https://services.leadconnectorhq.com/contacts/?locationId=${process.env.GHL_LOCATION_ID}&query=${encodeURIComponent(email)}`,
+        { headers: ghlHeaders }
+      );
+      const searchData = await searchRes.json();
+      contactId = searchData.contacts?.[0]?.id;
     }
 
     // 2. Send welcome email
     if (contactId) {
-      await fetch('https://services.leadconnectorhq.com/conversations/messages', {
+      const emailRes = await fetch('https://services.leadconnectorhq.com/conversations/messages', {
         method: 'POST',
         headers: ghlHeaders,
         body: JSON.stringify({
           type: 'Email',
           contactId,
-          emailFrom: 'info@entrateextra.com',
-          emailFromName: "L'Osservatorio di Entrate Extra",
-          emailSubject: `Sei dentro, ${firstName}. Ecco da dove iniziare.`,
+          subject: `Sei dentro, ${firstName}. Ecco da dove iniziare.`,
           html: WELCOME_EMAIL_HTML(firstName),
           locationId: process.env.GHL_LOCATION_ID
         })
       });
+      const emailData = await emailRes.json();
+      console.log('[subscribe] email status:', emailRes.status, JSON.stringify(emailData).slice(0, 300));
 
       // 3. Send WhatsApp/SMS if phone provided
       if (phone) {
-        await fetch('https://services.leadconnectorhq.com/conversations/messages', {
+        const smsRes = await fetch('https://services.leadconnectorhq.com/conversations/messages', {
           method: 'POST',
           headers: ghlHeaders,
           body: JSON.stringify({
@@ -149,11 +153,15 @@ export default async function handler(req, res) {
             locationId: process.env.GHL_LOCATION_ID
           })
         });
+        const smsData = await smsRes.json();
+        console.log('[subscribe] sms status:', smsRes.status, JSON.stringify(smsData).slice(0, 200));
       }
     }
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, contactId });
   } catch (err) {
+    console.error('[subscribe] error:', err.message);
     return res.status(500).json({ error: err.message });
   }
 }
+
