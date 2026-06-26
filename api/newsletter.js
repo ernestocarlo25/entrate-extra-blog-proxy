@@ -217,7 +217,7 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Non autorizzato' });
   }
 
-  const { subject, numero, data, analisiTitolo, analisiCorpo, radar, strategiaTitolo, strategiaCorpo, blog, domanda, testEmail } = req.body;
+  const { subject, numero, data, analisiTitolo, analisiCorpo, radar, strategiaTitolo, strategiaCorpo, blog, domanda, fonti, testEmail } = req.body;
 
   if (!subject || !numero || !analisiCorpo) {
     return res.status(400).json({ error: 'Campi obbligatori mancanti: subject, numero, analisiCorpo' });
@@ -298,6 +298,47 @@ export default async function handler(req, res) {
     }
 
     console.log(`[newsletter] Inviata: ${results.sent} ok, ${results.failed} errori`);
+
+    // 3. Salva fonti su GitHub (solo se invio reale, non test)
+    if (!testEmail && fonti && fonti.length > 0) {
+      try {
+        const REPO = 'ernestocarlo25/entrate-extra-blog-proxy';
+        const FILE_PATH = 'data/newsletter-sources.json';
+        const ghHeaders = {
+          'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        };
+
+        const fileRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, { headers: ghHeaders });
+        const fileData = await fileRes.json();
+        const current = JSON.parse(Buffer.from(fileData.content, 'base64').toString('utf-8'));
+
+        current._aggiornato = new Date().toISOString().split('T')[0];
+        current.puntate[numero] = {
+          data,
+          subject,
+          dataInvio: new Date().toISOString(),
+          destinatari: results.sent,
+          fonti
+        };
+
+        await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`, {
+          method: 'PUT',
+          headers: ghHeaders,
+          body: JSON.stringify({
+            message: `Fonti newsletter #${numero} — ${data}`,
+            content: Buffer.from(JSON.stringify(current, null, 2)).toString('base64'),
+            sha: fileData.sha
+          })
+        });
+
+        console.log(`[newsletter] Fonti puntata #${numero} salvate su GitHub`);
+      } catch (e) {
+        console.error('[newsletter] Errore salvataggio fonti:', e.message);
+      }
+    }
+
     return res.status(200).json({ success: true, total: contacts.length, ...results });
 
   } catch (err) {
