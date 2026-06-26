@@ -43,8 +43,8 @@ const WELCOME_EMAIL_HTML = (firstName) => `<!DOCTYPE html>
       </tr>
       <tr>
         <td style="padding:24px 40px;border-top:1px solid #222222;text-align:center;">
-          <p style="margin:0 0 8px;font-size:11px;color:#555555;">Hai ricevuto questa email perch&#233; ti sei iscritto/a a L'Osservatorio di Entrate Extra su entrateextra.com</p>
-          <p style="margin:0;font-size:11px;color:#555555;"><a href="mailto:info@entrateextra.com?subject=Disiscrivimi%20da%20L'Osservatorio" style="color:#555555;">Disiscriviti in un click</a> &middot; <a href="mailto:info@entrateextra.com" style="color:#555555;">info@entrateextra.com</a></p>
+          <p style="margin:0 0 8px;font-size:13px;color:#888888;">Hai ricevuto questa email perch&#233; ti sei iscritto/a a L'Osservatorio di Entrate Extra su entrateextra.com</p>
+          <p style="margin:0;font-size:13px;color:#888888;"><a href="mailto:info@entrateextra.com?subject=Disiscrivimi%20da%20L'Osservatorio" style="color:#888888;">Disiscriviti in un click</a> &middot; <a href="mailto:info@entrateextra.com" style="color:#888888;">info@entrateextra.com</a></p>
         </td>
       </tr>
     </table>
