@@ -133,6 +133,9 @@ export default async function handler(req, res) {
         body: JSON.stringify({
           type: 'Email',
           contactId,
+          emailTo: email,
+          emailFrom: 'info@entrateextra.com',
+          emailFromName: "L'Osservatorio di Entrate Extra",
           subject: `Sei dentro, ${firstName}. Ecco da dove iniziare.`,
           html: WELCOME_EMAIL_HTML(firstName),
           locationId: process.env.GHL_LOCATION_ID
