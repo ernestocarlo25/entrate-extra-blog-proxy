@@ -1,7 +1,7 @@
 const WELCOME_EMAIL_HTML = (firstName) => `<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#0a0a0a;font-family:Georgia,serif;">
+<body style="margin:0;padding:0;background:#0a0a0a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0a;">
   <tr><td align="center" style="padding:40px 20px;">
     <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#111111;border:1px solid #c9a84c;">
@@ -13,21 +13,21 @@ const WELCOME_EMAIL_HTML = (firstName) => `<!DOCTYPE html>
       </tr>
       <tr>
         <td style="padding:40px;">
-          <p style="color:#cccccc;font-size:16px;line-height:1.8;">Ciao ${firstName},</p>
-          <p style="color:#cccccc;font-size:16px;line-height:1.8;">benvenuto/a in <strong style="color:#ffffff;">L'Osservatorio di Entrate Extra</strong>.</p>
-          <p style="color:#cccccc;font-size:16px;line-height:1.8;">Non ti sei iscritto/a a una newsletter qualunque. Hai scelto di ricevere ogni settimana analisi, strategie e opportunità concrete — selezionate da chi lavora ogni giorno nel mondo del business e delle entrate extra.</p>
-          <p style="color:#cccccc;font-size:16px;line-height:1.8;">Niente rumore. Niente contenuti di basso valore. Solo ciò che vale davvero il tuo tempo.</p>
+          <p style="color:#e8e8e8;font-size:17px;line-height:1.8;">Ciao ${firstName},</p>
+          <p style="color:#e8e8e8;font-size:17px;line-height:1.8;">benvenuto/a in <strong style="color:#ffffff;">L'Osservatorio di Entrate Extra</strong>.</p>
+          <p style="color:#e8e8e8;font-size:17px;line-height:1.8;">Non ti sei iscritto/a a una newsletter qualunque. Hai scelto di ricevere ogni settimana analisi, strategie e opportunità concrete — selezionate da chi lavora ogni giorno nel mondo del business e delle entrate extra.</p>
+          <p style="color:#e8e8e8;font-size:17px;line-height:1.8;">Niente rumore. Niente contenuti di basso valore. Solo ciò che vale davvero il tuo tempo.</p>
           <table width="100%" cellpadding="0" cellspacing="0" style="margin:30px 0;border-left:3px solid #c9a84c;">
             <tr><td style="padding:20px 24px;background:#1a1a1a;">
               <p style="margin:0 0 12px;font-size:11px;letter-spacing:3px;color:#c9a84c;text-transform:uppercase;">Cosa riceverai ogni settimana</p>
-              <p style="margin:6px 0;color:#cccccc;font-size:15px;">&#10003; Analisi su modelli di business e opportunità concrete</p>
-              <p style="margin:6px 0;color:#cccccc;font-size:15px;">&#10003; Risorse selezionate: tool, trend, strategie da conoscere prima degli altri</p>
-              <p style="margin:6px 0;color:#cccccc;font-size:15px;">&#10003; Accesso anticipato a contenuti riservati ai membri della community</p>
+              <p style="margin:6px 0;color:#e8e8e8;font-size:16px;">&#10003; Analisi su modelli di business e opportunità concrete</p>
+              <p style="margin:6px 0;color:#e8e8e8;font-size:16px;">&#10003; Risorse selezionate: tool, trend, strategie da conoscere prima degli altri</p>
+              <p style="margin:6px 0;color:#e8e8e8;font-size:16px;">&#10003; Accesso anticipato a contenuti riservati ai membri della community</p>
             </td></tr>
           </table>
           <p style="margin:30px 0 10px;font-size:11px;letter-spacing:3px;color:#c9a84c;text-transform:uppercase;">Nel frattempo, inizia da qui</p>
-          <p style="margin:0 0 10px;"><a href="https://www.entrateextra.com/blog/come-creare-entrate-extra-2026-5-strategie" style="color:#c9a84c;text-decoration:none;font-size:15px;line-height:1.8;">&#8594; Come creare entrate extra nel 2026: le 5 strategie pi&#249; efficaci</a></p>
-          <p style="margin:0 0 30px;"><a href="https://www.entrateextra.com/blog/network-marketing-verita-pro-contro-guida-2026" style="color:#c9a84c;text-decoration:none;font-size:15px;line-height:1.8;">&#8594; Network Marketing: la verit&#224; che nessuno ti dice</a></p>
+          <p style="margin:0 0 10px;"><a href="https://www.entrateextra.com/blog/come-creare-entrate-extra-2026-5-strategie" style="color:#c9a84c;text-decoration:none;font-size:16px;line-height:1.8;">&#8594; Come creare entrate extra nel 2026: le 5 strategie pi&#249; efficaci</a></p>
+          <p style="margin:0 0 30px;"><a href="https://www.entrateextra.com/blog/network-marketing-verita-pro-contro-guida-2026" style="color:#c9a84c;text-decoration:none;font-size:16px;line-height:1.8;">&#8594; Network Marketing: la verit&#224; che nessuno ti dice</a></p>
           <table width="100%" cellpadding="0" cellspacing="0" style="margin:10px 0 30px;">
             <tr><td align="center">
               <a href="https://www.entrateextra.com" style="display:inline-block;padding:16px 40px;background:#c9a84c;color:#000000;text-decoration:none;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:bold;">Scopri la Community &#8594;</a>
@@ -35,10 +35,10 @@ const WELCOME_EMAIL_HTML = (firstName) => `<!DOCTYPE html>
           </table>
           <table width="100%" cellpadding="0" cellspacing="0" style="margin:20px 0;">
             <tr><td style="padding:16px 20px;background:#1a1a0a;border:1px solid rgba(201,168,76,0.15);">
-              <p style="margin:0;color:#999999;font-size:13px;line-height:1.7;">&#9888;&#65039; <strong style="color:#cccccc;">Una cosa importante:</strong> se questa email &#232; finita nello <strong style="color:#cccccc;">Spam</strong> o nella scheda <strong style="color:#cccccc;">Promozioni</strong> di Gmail, spostala nella cartella <strong style="color:#cccccc;">Principale</strong>. In questo modo tutte le prossime arriveranno direttamente l&#236;.</p>
+              <p style="margin:0;color:#cccccc;font-size:14px;line-height:1.7;">&#9888;&#65039; <strong style="color:#ffffff;">Una cosa importante:</strong> se questa email &#232; finita nello <strong style="color:#ffffff;">Spam</strong> o nella scheda <strong style="color:#ffffff;">Promozioni</strong> di Gmail, spostala nella cartella <strong style="color:#ffffff;">Principale</strong>. In questo modo tutte le prossime arriveranno direttamente l&#236;.</p>
             </td></tr>
           </table>
-          <p style="color:#cccccc;font-size:15px;line-height:1.8;margin-top:30px;">A presto,<br><strong style="color:#ffffff;">Ernesto e il Team di Entrate Extra</strong></p>
+          <p style="color:#e8e8e8;font-size:16px;line-height:1.8;margin-top:30px;">A presto,<br><strong style="color:#ffffff;">Ernesto e il Team di Entrate Extra</strong></p>
         </td>
       </tr>
       <tr>
