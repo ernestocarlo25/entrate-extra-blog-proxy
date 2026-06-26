@@ -10,12 +10,16 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Non autorizzato' });
   }
 
-  const { title, description, rawHTML, categoryId, imageUrl, imageAltText, urlSlug, authorId, publishedAt } = req.body;
+  const { title, description, rawHTML, categoryId, imageUrl, imageAltText, urlSlug, authorId, publishedAt, postId } = req.body;
 
   try {
-    // 1. Pubblica su GHL
-    const ghlRes = await fetch('https://services.leadconnectorhq.com/blogs/posts', {
-      method: 'POST',
+    // 1. Pubblica o aggiorna su GHL
+    const isUpdate = !!postId;
+    const ghlUrl = isUpdate
+      ? `https://services.leadconnectorhq.com/blogs/posts/${postId}`
+      : 'https://services.leadconnectorhq.com/blogs/posts';
+    const ghlRes = await fetch(ghlUrl, {
+      method: isUpdate ? 'PUT' : 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.GHL_API_KEY}`,
         'Content-Type': 'application/json',
