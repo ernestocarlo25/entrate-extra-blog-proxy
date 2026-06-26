@@ -175,11 +175,11 @@ const NEWSLETTER_HTML = (v) => `<!DOCTYPE html>
         </td>
       </tr>
 
-      <!-- ═══ CTA COMMUNITY ═══ -->
+      <!-- ═══ CTA BLOG ═══ -->
       <tr>
         <td style="padding:0 40px 36px;text-align:center;">
-          <p style="margin:0 0 16px;font-size:14px;color:#888888;line-height:1.7;">Vuoi confrontarti con altri imprenditori e professionisti che costruiscono entrate extra? La community ti aspetta.</p>
-          <a href="https://www.entrateextra.com" style="display:inline-block;padding:15px 36px;background:#c9a84c;color:#000000;text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;">Entra nella Community &#8594;</a>
+          <p style="margin:0 0 16px;font-size:14px;color:#888888;line-height:1.7;">Analisi, guide e strategie concrete sul blog di Entrate Extra — aggiornato ogni settimana.</p>
+          <a href="https://www.entrateextra.com/blog" style="display:inline-block;padding:15px 36px;background:#c9a84c;color:#000000;text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;">Leggi il Blog &#8594;</a>
         </td>
       </tr>
 
