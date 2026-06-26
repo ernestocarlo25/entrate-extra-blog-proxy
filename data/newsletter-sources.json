@@ -1,5 +1,42 @@
 {
   "_info": "Archivio fonti L'Osservatorio di Entrate Extra. Ogni puntata registra tutte le fonti esterne usate.",
   "_aggiornato": "2026-06-26",
-  "puntate": {}
+  "puntate": {
+    "01": {
+      "data": "3 luglio 2026",
+      "subject": "L'80% molla nel primo anno. Ecco perché (e come evitarlo)",
+      "dataInvio": "2026-06-26T21:15:44.749Z",
+      "destinatari": 0,
+      "fonti": [
+        {
+          "sezione": "analisi",
+          "titolo": "FTC Staff Report: MLM Income Disclosure Statements",
+          "url": "https://www.ftc.gov/business-guidance/blog/2024/09/ftc-staff-report-analyzes-70-mlm-income-disclosure-statements",
+          "dataAccesso": "2026-06-26",
+          "nota": "Dato usato: la maggioranza dei partecipanti guadagna meno di $84/mese"
+        },
+        {
+          "sezione": "radar-1",
+          "titolo": "FTC: la maggioranza dei networker guadagna meno di $84 al mese",
+          "url": "https://www.ftc.gov/business-guidance/blog/2024/09/ftc-staff-report-analyzes-70-mlm-income-disclosure-statements",
+          "dataAccesso": "2026-06-26",
+          "nota": "Report FTC settembre 2024, 70 IDS analizzati"
+        },
+        {
+          "sezione": "radar-2",
+          "titolo": "36 MLM Statistics to Know in 2025 — TrueList",
+          "url": "https://truelist.co/blog/mlm-statistics/",
+          "dataAccesso": "2026-06-26",
+          "nota": "Dato usato: 80% abbandona entro il primo anno, 90% entro 5 anni"
+        },
+        {
+          "sezione": "radar-3",
+          "titolo": "Direct Selling Global Market — Grand View Research",
+          "url": "https://www.grandviewresearch.com/press-release/global-direct-selling-market",
+          "dataAccesso": "2026-06-26",
+          "nota": "Dato usato: mercato a $407.80 miliardi entro 2033, CAGR 7.1%"
+        }
+      ]
+    }
+  }
 }
