@@ -243,21 +243,17 @@ export default async function handler(req, res) {
       contacts = (d.contacts || []).slice(0, 1);
       console.log(`[newsletter] TEST MODE — invio solo a: ${testEmail}`);
     } else {
-      // Invio completo: recupera tutti i contatti e filtra per tag client-side
-      let skip = 0;
-      while (true) {
-        const r = await fetch(
-          `https://services.leadconnectorhq.com/contacts/?locationId=${process.env.GHL_LOCATION_ID}&limit=100&skip=${skip}`,
-          { headers: ghlHeaders }
-        );
+      // Invio completo: recupera tutti i contatti (paginati via nextPageUrl) e filtra per tag
+      let nextUrl = `https://services.leadconnectorhq.com/contacts/?locationId=${process.env.GHL_LOCATION_ID}&limit=100`;
+      while (nextUrl) {
+        const r = await fetch(nextUrl, { headers: ghlHeaders });
         const d = await r.json();
         const batch = (d.contacts || []).filter(c =>
           Array.isArray(c.tags) && c.tags.includes('newsletter-osservatorio')
         );
         contacts = contacts.concat(batch);
-        const total = d.contacts?.length || 0;
-        if (total < 100) break;
-        skip += 100;
+        // GHL restituisce meta.nextPageUrl per la paginazione
+        nextUrl = d.meta?.nextPageUrl || null;
       }
     }
 
