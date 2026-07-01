@@ -27,7 +27,7 @@
 
 ## Prerequisiti tecnici prima di attivare le automazioni
 
-- [ ] Endpoint `/api/subscribe` configurato per questa BU
+- [ ] Endpoint `/api/subscribe` configurato per questa Engine Unit
 - [ ] Tag `newsletter-come-guadagnare-viaggiando` creato in GHL
 - [ ] Welcome email scritta e testata
 - [ ] Form di iscrizione attivo sul sito
@@ -36,7 +36,7 @@
 
 ## Note
 
-Nessuna automazione è attiva su questa BU perché la BU non è ancora stata lanciata. Le automazioni verranno configurate nella fase di pre-lancio, contestualmente alla checklist di apertura.
+Nessuna automazione è attiva su questa Engine Unit perché la Engine Unit non è ancora stata lanciata. Le automazioni verranno configurate nella fase di pre-lancio, contestualmente alla checklist di apertura.
 
 ---
 

@@ -27,7 +27,7 @@ Esiste un solo posto dove vive la verità — GitHub. Email, chat, conversazioni
 Ogni strumento che usiamo è sostituibile. Non ci leghiamo a nessun fornitore al punto da non poterlo cambiare. Questo vale per CRM, hosting, email provider, AI tools, tutto.
 
 **5. Modularità**
-Ogni Business Unit opera indipendentemente dalle altre. Il codice, i contenuti e i processi sono costruiti in modo da non creare dipendenze tra le BU. Se una si ferma, le altre continuano.
+Ogni Engine Unit opera indipendentemente dalle altre. Il codice, i contenuti e i processi sono costruiti in modo da non creare dipendenze tra le Engine Unit. Se una si ferma, le altre continuano.
 
 **6. Duplicabilità**
 Il sistema deve poter essere replicato su nuovi brand senza ricostruire tutto da zero. Ogni processo, template e standard è progettato per essere riutilizzato, non reinventato.

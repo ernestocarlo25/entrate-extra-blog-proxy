@@ -16,15 +16,15 @@ L'obiettivo non è un prodotto. È un modello: la dimostrazione che un'azienda m
 
 ## Il modello di crescita
 
-Crescita distribuita. Non un grande brand centrale con tutto concentrato in un punto — ma un ecosistema di Business Units indipendenti, ognuna focalizzata su un mercato specifico, tutte costruite sullo stesso sistema operativo.
+Crescita distribuita. Non un grande brand centrale con tutto concentrato in un punto — ma un ecosistema di Engine Units indipendenti, ognuna focalizzata su un mercato specifico, tutte costruite sullo stesso sistema operativo.
 
-Questo modello ha un vantaggio concreto: ogni nuova BU parte da fondamenta già costruite. Non si ricomincia da zero. Si duplica ciò che funziona, si adatta al nuovo contesto, si scala.
+Questo modello ha un vantaggio concreto: ogni nuova Engine Unit parte da fondamenta già costruite. Non si ricomincia da zero. Si duplica ciò che funziona, si adatta al nuovo contesto, si scala.
 
 ---
 
 ## Cosa stiamo costruendo oggi
 
-Le Business Units attive e in sviluppo — Entrate Extra, Come Guadagnare Viaggiando, Oro Reale, Orygn — sono la prima implementazione di questo modello. Non sono il prodotto finale. Sono la prova che il sistema funziona.
+Le Engine Units attive e in sviluppo — Entrate Extra, Come Guadagnare Viaggiando, Oro Reale, Orygn — sono la prima implementazione di questo modello. Non sono il prodotto finale. Sono la prova che il sistema funziona.
 
 ---
 

@@ -60,9 +60,9 @@
 
 ---
 
-## Perché sceglie questa BU e non le alternative
+## Perché sceglie questa Engine Unit e non le alternative
 
-[Motivo specifico legato alla proposta di valore di questa BU.]
+[Motivo specifico legato alla proposta di valore di questa Engine Unit.]
 
 ---
 

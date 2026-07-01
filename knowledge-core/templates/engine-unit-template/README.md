@@ -1,4 +1,4 @@
-# [NOME_BU] — Business Unit
+# [NOME_BU] — Engine Unit
 
 **Brand:** [NOME_BU]  
 **Fase attuale:** Fase 0 — Fondazione  
@@ -13,7 +13,7 @@
 
 ---
 
-## Documenti della BU
+## Documenti della Engine Unit
 
 | Documento | Tipo | Stato |
 |---|---|---|
@@ -68,4 +68,4 @@
 
 ---
 
-*Business Unit — Entrate Extra Operating System — Blueprint v0.2*
+*Engine Unit — Entrate Extra Operating System — Blueprint v0.2*

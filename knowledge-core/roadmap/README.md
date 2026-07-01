@@ -48,6 +48,21 @@ Obiettivo: costruire l'infrastruttura operativa solida prima di scalare.
 
 ---
 
+## Obiettivi Engine Unit CGV — 12 mesi (approvati)
+
+Decisione CEO del 1 luglio 2026. Orizzonte: 12 mesi dal lancio operativo di CGV.
+
+| Obiettivo | Target | Fonte verifica |
+|---|---|---|
+| Iscritti newsletter Substack | 5.000 | Substack dashboard |
+| Clienti MWR Life | 2.000 | Back-office MWR Life |
+| Partner attivi | 100 | Back-office MWR Life |
+| Prima Engine Unit completamente automatizzata | Sì | Milestone operativa |
+
+**Stato attuale CGV:** Fase 0 — Fondazione. Substack e TikTok non ancora creati. Nessun cliente acquisito.
+
+---
+
 ## Fase 2 — Crescita
 
 *Da definire al completamento della Fase 1*

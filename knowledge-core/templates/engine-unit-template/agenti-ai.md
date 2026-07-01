@@ -7,7 +7,7 @@
 
 ---
 
-> Gli agenti non sono sistemi separati. È la stessa AI (Claude) che opera in ruoli diversi in base al contesto attivato. Le istruzioni generali sono nel Blueprint v0.2. Qui si documentano le istruzioni specifiche per questa BU.
+> Gli agenti non sono sistemi separati. È la stessa AI (Claude) che opera in ruoli diversi in base al contesto attivato. Le istruzioni generali sono nel Blueprint v0.2. Qui si documentano le istruzioni specifiche per questa Engine Unit.
 
 ---
 

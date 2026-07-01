@@ -42,7 +42,7 @@
 
 ---
 
-## Costi fissi della BU
+## Costi fissi della Engine Unit
 
 | Voce | Costo mensile | Note |
 |---|---|---|

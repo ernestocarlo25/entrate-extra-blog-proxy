@@ -8,7 +8,7 @@
 
 ---
 
-> Il Customer Journey mappa il percorso reale del cliente — cosa pensa, sente e fa in ogni momento del rapporto con la BU. Il Funnel (Step 6) traduce questo percorso in strumenti e trigger operativi.
+> Il Customer Journey mappa il percorso reale del cliente — cosa pensa, sente e fa in ogni momento del rapporto con la Engine Unit. Il Funnel (Step 6) traduce questo percorso in strumenti e trigger operativi.
 
 ---
 
@@ -18,7 +18,7 @@
 
 [contesto]
 
-**Come trova questa BU:**
+**Come trova questa Engine Unit:**
 
 [canale / trigger]
 
@@ -34,7 +34,7 @@
 
 ## Stadio 2 — Considerazione
 
-**Cosa lo porta a valutare questa BU:**
+**Cosa lo porta a valutare questa Engine Unit:**
 
 [motivazione]
 
@@ -106,7 +106,7 @@
 
 [segnali di churn]
 
-**Cosa lo porta a consigliare la BU ad altri:**
+**Cosa lo porta a consigliare la Engine Unit ad altri:**
 
 [trigger]
 

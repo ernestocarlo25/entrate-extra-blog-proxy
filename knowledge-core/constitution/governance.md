@@ -39,7 +39,7 @@ L'AI opera su tre livelli: sviluppa e mantiene il codice, scrive e ricerca conte
 
 **Decisioni operative quotidiane** (es. struttura di un articolo, scelta di una fonte, approccio tecnico) → l'AI propone, il CEO approva o corregge nella stessa sessione.
 
-**Decisioni strategiche** (es. aggiungere una BU, cambiare piattaforma, definire un nuovo processo) → vengono documentate in `decisioni-strategiche/` con contesto, opzioni valutate e motivazione della scelta.
+**Decisioni strategiche** (es. aggiungere una Engine Unit, cambiare piattaforma, definire un nuovo processo) → vengono documentate in `decisioni-strategiche/` con contesto, opzioni valutate e motivazione della scelta.
 
 **Modifiche alla Constitution** → richiedono riflessione esplicita. Ogni modifica viene registrata in `decisioni-strategiche/` prima di essere applicata.
 

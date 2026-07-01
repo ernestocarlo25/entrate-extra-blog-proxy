@@ -21,7 +21,7 @@ I template eliminano il lavoro ridondante e garantiscono coerenza tra tutti gli 
 | `template-newsletter.md` | Struttura delle sezioni de "L'Osservatorio" |
 | `template-session-report.md` | Formato standard per i report di sessione |
 | `template-adr.md` | Formato standard per le decisioni strategiche (ADR) |
-| `template-business-unit.md` | Struttura da copiare per ogni nuova BU |
+| `template-engine-unit.md` | Struttura da copiare per ogni nuova Engine Unit |
 | `template-processo.md` | Formato standard per documentare un processo |
 
 ---

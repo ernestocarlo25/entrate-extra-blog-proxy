@@ -16,11 +16,11 @@
 
 ## Cosa offre
 
-[Prodotto o servizio specifico. Cosa riceve concretamente chi sceglie questa BU.]
+[Prodotto o servizio specifico. Cosa riceve concretamente chi sceglie questa Engine Unit.]
 
 ---
 
-## Perché questa BU e non le alternative
+## Perché questa Engine Unit e non le alternative
 
 [Differenziatore principale rispetto ai competitor. Una sola ragione, forte e verificabile.]
 

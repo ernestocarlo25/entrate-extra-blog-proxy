@@ -1,8 +1,8 @@
-# Business Unit Scorecard
+# Engine Unit Scorecard
 
 **Template versione:** 1.0  
 **Data creazione:** 1 luglio 2026  
-**Riferimento:** Business Units Blueprint v0.2
+**Riferimento:** Engine Units Blueprint v0.2
 
 ---
 
@@ -10,9 +10,9 @@
 
 1. Compila ogni area con il punteggio da 0 a 10 seguendo i criteri indicati
 2. Calcola il punteggio totale con la formula in fondo
-3. Identifica lo stato della BU e le prossime azioni
+3. Identifica lo stato della Engine Unit e le prossime azioni
 
-**Sostituisci `[NOME_BU]` con il nome della Business Unit da valutare.**
+**Sostituisci `[NOME_BU]` con il nome della Engine Unit da valutare.**
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Area 1 — Vision
 
-**Domanda:** La BU sa dove sta andando nei prossimi 3-5 anni?
+**Domanda:** La Engine Unit sa dove sta andando nei prossimi 3-5 anni?
 
 **Punteggio:** [ ] / 10
 
@@ -34,7 +34,7 @@
 |---|---|
 | 0 | Nessun documento, nessuna direzione |
 | 1–3 | Concept generico esistente, nessuna direzione specifica né orizzonte temporale |
-| 4–6 | Direzione dichiarata ma vaga, non differenziante rispetto ad altre BU |
+| 4–6 | Direzione dichiarata ma vaga, non differenziante rispetto ad altre Engine Unit |
 | 7–9 | Vision chiara, specifica, con orizzonte temporale e perimetro geografico definiti |
 | 10 | Vision completa, approvata CEO, allineata alla Constitution, scritta in `vision.md` |
 
@@ -46,7 +46,7 @@
 
 ## Area 2 — Proposta di Valore
 
-**Domanda:** La BU sa esattamente cosa offre, a chi e perché è diversa dalle alternative?
+**Domanda:** La Engine Unit sa esattamente cosa offre, a chi e perché è diversa dalle alternative?
 
 **Punteggio:** [ ] / 10
 
@@ -58,7 +58,7 @@
 | 7–9 | Target, offerta e differenziatore definiti, promessa formulata |
 | 10 | Proposta completa, approvata CEO, scritta in `proposta-di-valore.md`, promessa in una frase |
 
-**Per arrivare a 10:** prodotto principale scelto, posizionamento vs. competitor e vs. altre BU definito.
+**Per arrivare a 10:** prodotto principale scelto, posizionamento vs. competitor e vs. altre Engine Unit definito.
 
 **Note:** [spazio per annotazioni]
 
@@ -66,7 +66,7 @@
 
 ## Area 3 — Avatar
 
-**Domanda:** La BU conosce in profondità il suo cliente ideale?
+**Domanda:** La Engine Unit conosce in profondità il suo cliente ideale?
 
 **Punteggio:** [ ] / 10
 
@@ -86,7 +86,7 @@
 
 ## Area 4 — Revenue Model
 
-**Domanda:** La BU sa come genera reddito?
+**Domanda:** La Engine Unit sa come genera reddito?
 
 **Punteggio:** [ ] / 10
 
@@ -106,7 +106,7 @@
 
 ## Area 5 — Customer Journey
 
-**Domanda:** La BU ha mappato il percorso completo del cliente dal primo contatto alla fidelizzazione?
+**Domanda:** La Engine Unit ha mappato il percorso completo del cliente dal primo contatto alla fidelizzazione?
 
 **Punteggio:** [ ] / 10
 
@@ -126,7 +126,7 @@
 
 ## Area 6 — Funnel
 
-**Domanda:** La BU ha gli strumenti operativi per ogni stadio dell'acquisizione?
+**Domanda:** La Engine Unit ha gli strumenti operativi per ogni stadio dell'acquisizione?
 
 **Punteggio:** [ ] / 10
 
@@ -146,7 +146,7 @@
 
 ## Area 7 — Piano Editoriale
 
-**Domanda:** La BU produce contenuti con frequenza e strategia definite?
+**Domanda:** La Engine Unit produce contenuti con frequenza e strategia definite?
 
 **Punteggio:** [ ] / 10
 
@@ -166,7 +166,7 @@
 
 ## Area 8 — KPI
 
-**Domanda:** La BU misura ciò che conta con numeri aggiornati?
+**Domanda:** La Engine Unit misura ciò che conta con numeri aggiornati?
 
 **Punteggio:** [ ] / 10
 
@@ -206,14 +206,14 @@
 
 ## Area 10 — Agenti AI
 
-**Domanda:** L'AI ha istruzioni specifiche per operare su questa BU?
+**Domanda:** L'AI ha istruzioni specifiche per operare su questa Engine Unit?
 
 **Punteggio:** [ ] / 10
 
 | Punteggio | Criterio |
 |---|---|
 | 0 | Nessuna configurazione |
-| 1–3 | Ruoli AI identificati (CTO/Editor/Analista) ma nessuna istruzione BU-specifica |
+| 1–3 | Ruoli AI identificati (CTO/Editor/Analista) ma nessuna istruzione Engine Unit-specifica |
 | 4–6 | Istruzioni parziali per almeno un agente, nessun prompt validato |
 | 7–9 | Tutti e 3 gli agenti configurati con istruzioni specifiche per tono, standard e archivio fonti |
 | 10 | Agenti operativi con prompt validati in `knowledge-core/prompts/`, scritti in `agenti-ai.md` |
@@ -226,7 +226,7 @@
 
 ## Area 11 — Asset e Materiali
 
-**Domanda:** La BU ha un'identità visiva completa e gli asset sono localizzati?
+**Domanda:** La Engine Unit ha un'identità visiva completa e gli asset sono localizzati?
 
 **Punteggio:** [ ] / 10
 
@@ -246,7 +246,7 @@
 
 ## Area 12 — Stato Operativo
 
-**Domanda:** La BU è tecnicamente live e acquisisce le prime persone?
+**Domanda:** La Engine Unit è tecnicamente live e acquisisce le prime persone?
 
 **Punteggio:** [ ] / 10
 
@@ -292,7 +292,7 @@ Punteggio finale = (Totale raw ÷ 120) × 100
 
 ---
 
-## Stato della Business Unit
+## Stato della Engine Unit
 
 | Punteggio | Stato |
 |---|---|
@@ -341,5 +341,5 @@ Punteggio finale = (Totale raw ÷ 120) × 100
 
 ---
 
-*Business Unit Scorecard v1.0 — Entrate Extra Operating System*  
+*Engine Unit Scorecard v1.0 — Entrate Extra Operating System*  
 *Riferimento: Blueprint v0.2 — Aggiornare la scorecard ad ogni revisione trimestrale o dopo ogni Sprint significativo*

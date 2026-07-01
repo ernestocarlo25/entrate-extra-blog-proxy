@@ -1,0 +1,48 @@
+# Engine Units — I Rami del Business
+
+**Cartella:** `knowledge-core/engine-units/`  
+**Scopo:** Documentare ogni verticale di business in modo indipendente
+
+---
+
+## A cosa serve questa cartella
+
+L'azienda non è un monolite. È una costellazione di **Engine Units** (Engine Unit) — rami di business separati che operano con brand, audience e logiche diverse, ma condividono la stessa infrastruttura operativa.
+
+Ogni Engine Unit ha la sua sottocartella con la sua documentazione specifica: chi è il suo cliente ideale, qual è la sua proposta di valore, come si monetizza, quali canali usa.
+
+---
+
+## Engine Units attive
+
+| Cartella | Brand | Stato |
+|---|---|---|
+| `entrate-extra/` | Entrate Extra | Attiva — Engine Unit principale |
+| `come-guadagnare-viaggiando/` | Come Guadagnare Viaggiando | In sviluppo |
+| `oro-reale/` | Oro Reale | In sviluppo |
+| `orygn/` | Orygn | In sviluppo |
+
+---
+
+## Come funziona l'architettura multi-Engine Unit
+
+Ogni Engine Unit ha:
+- **Brand proprio** — nome, visual identity, tono di voce
+- **Audience propria** — chi sono i suoi potenziali clienti
+- **Canali propri** — blog, newsletter, social
+- **Revenue model proprio** — come genera reddito
+
+Tutte le Engine Unit condividono:
+- Infrastruttura tecnica (GitHub, Vercel, FASTER/GHL)
+- Principi di governance (i 10 principi dell'Operating System)
+- Qualità editoriale (stesso standard per ogni contenuto)
+
+---
+
+## Regola di indipendenza
+
+Ogni Engine Unit deve poter operare **indipendentemente dalle altre**. Se una Engine Unit viene sospesa o ceduta, le altre non ne risentono. Questo principio guida ogni scelta tecnica e operativa.
+
+---
+
+*Contenuto da popolare — Fase 2*

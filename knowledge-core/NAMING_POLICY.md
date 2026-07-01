@@ -32,7 +32,7 @@
 **Nessun numero progressivo nel nome della cartella**
 
 ```
-✅ business-units/
+✅ engine-units/
 ✅ decisioni-strategiche/
 ✅ session-report/
 ✅ operating-blueprint/
@@ -40,7 +40,7 @@
 ❌ BusinessUnits/
 ❌ Decisioni Strategiche/
 ❌ session_report/
-❌ 01-business-units/
+❌ 01-engine-units/
 ```
 
 ---
@@ -73,7 +73,7 @@ Usano ALLCAPS per distinguersi visivamente come documenti di sistema:
 
 ---
 
-## 3. Business Unit
+## 3. Engine Unit
 
 **Nome visualizzato:** Italiano, con maiuscole sui sostantivi principali  
 **Slug (cartella e tag CRM):** `lowercase-kebab-case`, italiano
@@ -88,7 +88,7 @@ Usano ALLCAPS per distinguersi visivamente come documenti di sistema:
 ✅ Tag CRM: newsletter-oro-reale
 ```
 
-**Regola tag CRM:** sempre `newsletter-[slug-bu]`, senza variazioni.
+**Regola tag CRM:** sempre `newsletter-[slug-eu]`, senza variazioni.
 
 ---
 
@@ -118,7 +118,7 @@ Usano ALLCAPS per distinguersi visivamente come documenti di sistema:
 **Posizione:** `knowledge-core/templates/`
 
 ```
-✅ templates/bu-template/
+✅ templates/engine-unit-template/
 ✅ templates/newsletter-template/
 ✅ templates/articolo-template/
 
@@ -206,13 +206,13 @@ Il `[task]` descrive l'output atteso, non il processo:
 
 | Categoria | Formato | Esempio |
 |---|---|---|
-| Cartella | `lowercase-kebab-case` | `business-units/` |
+| Cartella | `lowercase-kebab-case` | `engine-units/` |
 | Documento standard | `lowercase-kebab-case.md` | `proposta-di-valore.md` |
 | Documento meta | `ALLCAPS.md` | `RUNBOOK.md` |
-| BU slug | `lowercase-kebab-case` | `come-guadagnare-viaggiando` |
-| Tag CRM | `newsletter-[slug-bu]` | `newsletter-oro-reale` |
+| Engine Unit slug | `lowercase-kebab-case` | `come-guadagnare-viaggiando` |
+| Tag CRM | `newsletter-[slug-eu]` | `newsletter-oro-reale` |
 | Standard | `standard-[nome].md` | `standard-editoriale.md` |
-| Template cartella | `[tipo]-template/` | `bu-template/` |
+| Template cartella | `[tipo]-template/` | `engine-unit-template/` |
 | Prompt | `prompt-[task].md` | `prompt-articolo-blog.md` |
 | ADR | `[NNN]-[slug].md` | `001-github-single-source-of-truth.md` |
 | Session Report | `AAAA-MM-GG-[slug].md` | `2026-06-26-os-fondazione.md` |
@@ -225,7 +225,7 @@ Il `[task]` descrive l'output atteso, non il processo:
 I seguenti documenti sono già congelati e non vengono modificati per adeguarli a questa policy:
 
 - `knowledge-core/constitution/` — vision.md, mission.md, principles.md, governance.md (inglese, congelati)
-- `knowledge-core/templates/bu-template/` — template BU congelato al Blueprint v0.2
+- `knowledge-core/templates/engine-unit-template/` — template Engine Unit congelato al Blueprint v0.2
 - `knowledge-core/operating-blueprint/RUNBOOK.md` — congelato alla v0.1
 
 Tutti i nuovi documenti creati dopo l'approvazione di questa policy devono rispettarla.

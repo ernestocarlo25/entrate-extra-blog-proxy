@@ -1,6 +1,6 @@
-# Orygn — Business Unit
+# Orygn — Engine Unit
 
-**Cartella:** `knowledge-core/business-units/orygn/`  
+**Cartella:** `knowledge-core/engine-units/orygn/`  
 **Brand:** Orygn  
 **Stato:** In sviluppo
 
@@ -8,7 +8,7 @@
 
 ## A cosa serve questa cartella
 
-Raccoglie tutta la documentazione relativa alla Business Unit "Orygn" — brand, audience, canali, contenuti, revenue model.
+Raccoglie tutta la documentazione relativa alla Engine Unit "Orygn" — brand, audience, canali, contenuti, revenue model.
 
 ---
 
@@ -20,7 +20,7 @@ Raccoglie tutta la documentazione relativa alla Business Unit "Orygn" — brand,
 
 ## Stato attuale
 
-Questa BU è **in sviluppo**. I dettagli operativi, il piano editoriale e il revenue model verranno definiti e documentati qui in una fase successiva.
+Questa Engine Unit è **in sviluppo**. I dettagli operativi, il piano editoriale e il revenue model verranno definiti e documentati qui in una fase successiva.
 
 ---
 
@@ -29,7 +29,7 @@ Questa BU è **in sviluppo**. I dettagli operativi, il piano editoriale e il rev
 | Documento | Contenuto |
 |---|---|
 | `brand.md` | Identità visiva, tono di voce, concept |
-| `audience.md` | Chi è il cliente ideale di questa BU |
+| `audience.md` | Chi è il cliente ideale di questa Engine Unit |
 | `canali.md` | Quali piattaforme e con quale strategia |
 | `revenue-model.md` | Come genera reddito |
 | `piano-editoriale.md` | Contenuti e frequenza |

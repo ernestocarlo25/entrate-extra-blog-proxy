@@ -39,7 +39,7 @@
 
 ## Prerequisiti tecnici
 
-- [ ] Endpoint `/api/subscribe` configurato per questa BU
+- [ ] Endpoint `/api/subscribe` configurato per questa Engine Unit
 - [ ] Tag `newsletter-[nome-bu]` creato in GHL
 - [ ] Welcome email scritta e testata
 - [ ] Form di iscrizione attivo sul sito

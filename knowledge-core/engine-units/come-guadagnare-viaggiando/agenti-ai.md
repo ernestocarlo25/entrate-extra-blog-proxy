@@ -8,7 +8,7 @@
 
 ## Agenti assegnati
 
-Ogni BU opera con tre agenti AI. Gli scope generali sono definiti nel Blueprint v0.1. Qui si documentano le istruzioni specifiche per questa BU.
+Ogni Engine Unit opera con tre agenti AI. Gli scope generali sono definiti nel Blueprint v0.1. Qui si documentano le istruzioni specifiche per questa Engine Unit.
 
 ---
 

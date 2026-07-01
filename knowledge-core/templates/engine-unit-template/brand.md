@@ -74,7 +74,7 @@
 
 [descrizione]
 
-**Come si distingue dalle altre BU:**
+**Come si distingue dalle altre Engine Unit:**
 
 [descrizione]
 

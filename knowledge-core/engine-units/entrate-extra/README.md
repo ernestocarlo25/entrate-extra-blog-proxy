@@ -1,6 +1,6 @@
-# Entrate Extra — Business Unit Principale
+# Entrate Extra — Engine Unit Principale
 
-**Cartella:** `knowledge-core/business-units/entrate-extra/`  
+**Cartella:** `knowledge-core/engine-units/entrate-extra/`  
 **Brand:** Entrate Extra  
 **Stato:** Attiva
 

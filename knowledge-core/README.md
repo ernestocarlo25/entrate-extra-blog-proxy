@@ -35,7 +35,7 @@ knowledge-core/
 ├── manifesto/              ← chi siamo e perché esistiamo
 ├── operating-blueprint/    ← come funziona l'azienda giorno per giorno
 ├── decisioni-strategiche/  ← le scelte importanti e le loro motivazioni
-├── business-units/         ← ogni ramo del business
+├── engine-units/         ← ogni ramo del business
 ├── ruoli/                  ← chi fa cosa (persone e AI)
 ├── processi/               ← istruzioni passo-passo per ogni attività
 ├── dashboard/              ← i numeri che contano

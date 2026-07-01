@@ -1,8 +1,8 @@
-# Business Units Blueprint v0.2
+# Engine Units Blueprint v0.2
 
 **Versione:** 0.2  
 **Data:** 1 luglio 2026  
-**Scopo:** Modello standard per la creazione di una nuova Business Unit  
+**Scopo:** Modello standard per la creazione di una nuova Engine Unit  
 **Come si usa:** Clona questo documento, sostituisci `[NOME_BU]` con il nome del brand, completa ogni sezione.
 
 **Modifiche dalla v0.1:**
@@ -15,7 +15,7 @@
 ---
 
 > **Principio guida**  
-> Una Business Unit non si inventa ogni volta. Si clona il Blueprint, si adatta al contesto, si lancia. Tutto ciò che non è nel Blueprint non esiste ancora — va costruito e documentato prima di considerare la BU operativa.
+> Una Engine Unit non si inventa ogni volta. Si clona il Blueprint, si adatta al contesto, si lancia. Tutto ciò che non è nel Blueprint non esiste ancora — va costruito e documentato prima di considerare la Engine Unit operativa.
 
 ---
 
@@ -35,10 +35,10 @@ Prima di compilare qualsiasi documento, assegna a ogni elemento uno di questi tr
 
 ## 1. Struttura
 
-Ogni BU è una cartella autonoma nel repository GitHub. La struttura è sempre la stessa.
+Ogni Engine Unit è una cartella autonoma nel repository GitHub. La struttura è sempre la stessa.
 
 ```
-business-units/
+engine-units/
 └── [nome-bu]/
     ├── README.md                  ← panoramica, fase attuale, checklist apertura
     │
@@ -57,7 +57,7 @@ business-units/
     └── agenti-ai.md               ← Supporto operativo (non step sequenziale)
 ```
 
-**Regola:** nessuna BU viene considerata "aperta" finché tutti questi file non esistono, anche solo con contenuto minimo e stato dichiarato.
+**Regola:** nessuna Engine Unit viene considerata "aperta" finché tutti questi file non esistono, anche solo con contenuto minimo e stato dichiarato.
 
 ---
 
@@ -75,7 +75,7 @@ Il brand non è uno step da costruire nella sequenza logica. È un **patrimonio 
 | Font | Tipografia principale e secondaria |
 | Logo | Dove si trovano i file (SVG, PNG) |
 | Tono di voce | 3 aggettivi, esempi di come parla, cosa non dice mai |
-| Differenziazione | Come si distingue dalle altre BU dell'ecosistema |
+| Differenziazione | Come si distingue dalle altre Engine Unit dell'ecosistema |
 
 **Stato da assegnare a ogni elemento:** ESISTENTE / DA DOCUMENTARE / DA DEFINIRE
 
@@ -87,7 +87,7 @@ La sequenza non è arbitraria. Ogni step dipende da quello precedente. Non si sa
 
 ```
 STEP 1 — Vision
-Dove sta andando questa BU nei prossimi anni?
+Dove sta andando questa Engine Unit nei prossimi anni?
         ↓
 STEP 2 — Proposta di Valore
 Cosa offre, a chi, perché è diversa dalle alternative?
@@ -121,13 +121,13 @@ Non si può costruire un funnel senza sapere chi è l'avatar. Non si può fare u
 
 ## 4. Documentazione obbligatoria
 
-Prima del lancio, ogni BU deve avere questi documenti compilati. Per ogni documento, indicare lo stato di ogni sezione.
+Prima del lancio, ogni Engine Unit deve avere questi documenti compilati. Per ogni documento, indicare lo stato di ogni sezione.
 
 | Documento | Contenuto minimo richiesto | Dipende da |
 |---|---|---|
 | `README.md` | Nome, fase attuale, link agli altri file, checklist apertura | — |
 | `brand.md` | Tutti gli elementi del patrimonio con stato dichiarato | — |
-| `vision.md` | Dove vuole arrivare la BU in 3-5 anni | brand.md |
+| `vision.md` | Dove vuole arrivare la Engine Unit in 3-5 anni | brand.md |
 | `proposta-di-valore.md` | A chi, cosa, perché noi e non altri | vision.md |
 | `avatar.md` | Profilo dettagliato del cliente ideale | proposta-di-valore.md |
 | `revenue-model.md` | Prodotto/servizio, prezzo, struttura | avatar.md |
@@ -136,23 +136,23 @@ Prima del lancio, ogni BU deve avere questi documenti compilati. Per ogni docume
 | `piano-editoriale.md` | Categorie, frequenza, formati, canali | funnel.md |
 | `kpi.md` | 7 KPI standard con valore attuale e obiettivo a 90 giorni | piano-editoriale.md |
 | `automazioni.md` | Automazioni attive per fase con trigger e azione | kpi.md |
-| `agenti-ai.md` | Quale AI fa cosa, con istruzioni operative specifiche per la BU | tutti |
+| `agenti-ai.md` | Quale AI fa cosa, con istruzioni operative specifiche per la Engine Unit | tutti |
 
 ---
 
 ## 5. Standard applicabili
 
-Ogni BU eredita automaticamente gli standard dell'Operating System. Non si ridefiniscono per ogni BU — si applicano.
+Ogni Engine Unit eredita automaticamente gli standard dell'Operating System. Non si ridefiniscono per ogni Engine Unit — si applicano.
 
-| Standard | Dove si trova | Si può modificare per BU? |
+| Standard | Dove si trova | Si può modificare per Engine Unit? |
 |---|---|---|
-| Standard editoriale | `knowledge-core/standards/standard-editoriale.md` | No — vale per tutte le BU |
+| Standard editoriale | `knowledge-core/standards/standard-editoriale.md` | No — vale per tutte le Engine Unit |
 | Standard SEO | `knowledge-core/standards/standard-seo.md` | No |
-| Standard visivo | `knowledge-core/standards/standard-visivo.md` | Sì — ogni BU ha il suo brand |
+| Standard visivo | `knowledge-core/standards/standard-visivo.md` | Sì — ogni Engine Unit ha il suo brand |
 | Standard newsletter | `knowledge-core/standards/standard-newsletter.md` | Sì — adattabile per formato |
 | Standard tecnico | `knowledge-core/standards/standard-tecnico.md` | No |
 
-**Eccezione:** il brand visivo (colori, font, immagini) è specifico per ogni BU. Tutto il resto è condiviso.
+**Eccezione:** il brand visivo (colori, font, immagini) è specifico per ogni Engine Unit. Tutto il resto è condiviso.
 
 ---
 
@@ -160,7 +160,7 @@ Ogni BU eredita automaticamente gli standard dell'Operating System. Non si ridef
 
 ### Dashboard
 
-Ogni BU ha una voce nella dashboard trimestrale dell'azienda. Il formato è sempre lo stesso:
+Ogni Engine Unit ha una voce nella dashboard trimestrale dell'azienda. Il formato è sempre lo stesso:
 
 ```markdown
 ## [NOME_BU] — [Trimestre AAAA]
@@ -174,9 +174,9 @@ Ogni BU ha una voce nella dashboard trimestrale dell'azienda. Il formato è semp
 | Revenue (se attiva) | €0 | €X | — |
 ```
 
-### KPI standard per ogni BU
+### KPI standard per ogni Engine Unit
 
-Questi 7 KPI sono obbligatori per ogni BU. I valori obiettivo cambiano in base alla fase.
+Questi 7 KPI sono obbligatori per ogni Engine Unit. I valori obiettivo cambiano in base alla fase.
 
 | KPI | Cosa misura | Fonte del dato |
 |---|---|---|
@@ -186,7 +186,7 @@ Questi 7 KPI sono obbligatori per ogni BU. I valori obiettivo cambiano in base a
 | **Tasso di click** | Efficacia delle CTA | GoHighLevel analytics |
 | **Articoli pubblicati / mese** | Velocità di produzione contenuti | Blog |
 | **Visite mensili** | Traffico organico generato | Analytics blog |
-| **Revenue / mese** | Ritorno economico della BU | Contabilità |
+| **Revenue / mese** | Ritorno economico della Engine Unit | Contabilità |
 
 ### Fasi e obiettivi
 
@@ -201,14 +201,14 @@ Questi 7 KPI sono obbligatori per ogni BU. I valori obiettivo cambiano in base a
 
 ## 7. Repository
 
-### Setup GitHub per una nuova BU
+### Setup GitHub per una nuova Engine Unit
 
-Ogni BU può condividere il repository principale oppure avere un repository separato, in base alla complessità tecnica.
+Ogni Engine Unit può condividere il repository principale oppure avere un repository separato, in base alla complessità tecnica.
 
-**BU semplice** (blog + newsletter, stesso stack di Entrate Extra):
+**Engine Unit semplice** (blog + newsletter, stesso stack di Entrate Extra):
 → Cartella dedicata nel repo `entrate-extra-blog-proxy`. Nessun nuovo repository.
 
-**BU complessa** (stack diverso, monetizzazione diversa, team separato):
+**Engine Unit complessa** (stack diverso, monetizzazione diversa, team separato):
 → Nuovo repository GitHub `[nome-bu]-proxy` con la stessa struttura del principale.
 
 ### Struttura minima del repository
@@ -229,7 +229,7 @@ Ogni BU può condividere il repository principale oppure avere un repository sep
 | Variabile | Obbligatoria al lancio |
 |---|---|
 | `GHL_API_KEY` | Sì |
-| `GHL_LOCATION_ID` | Sì (specifico per BU se su account separato) |
+| `GHL_LOCATION_ID` | Sì (specifico per Engine Unit se su account separato) |
 | `PUBLISH_SECRET` | Sì |
 | `GOOGLE_AI_KEY` | Solo se genera immagini |
 | `GITHUB_TOKEN` | Solo se scrive su GitHub |
@@ -265,7 +265,7 @@ Il brand kit non si crea al lancio — si censisce. Se il brand esiste già, i f
 
 ### Presenza minima al lancio
 
-Una BU non deve essere ovunque. Deve essere dove è il suo cliente ideale.
+Una Engine Unit non deve essere ovunque. Deve essere dove è il suo cliente ideale.
 
 | Canale | Quando attivare | Frequenza minima |
 |---|---|---|
@@ -286,7 +286,7 @@ Non si costruisce un business sul social — si costruisce sul proprio canale (e
 
 ## 10. Funnel
 
-Il funnel standard di ogni BU è composto da 5 stadi. Gli strumenti cambiano in base alla BU, ma la logica è sempre la stessa.
+Il funnel standard di ogni Engine Unit è composto da 5 stadi. Gli strumenti cambiano in base alla Engine Unit, ma la logica è sempre la stessa.
 
 ```
 [AWARENESS]
@@ -351,7 +351,7 @@ Il cliente rimane attivo e porta altri
 
 ## 12. Agenti AI assegnati
 
-Ogni BU opera con tre agenti AI, ognuno con un ruolo preciso. Gli agenti non sono persone diverse — è la stessa AI (Claude) che opera in modo diverso in base al ruolo attivato.
+Ogni Engine Unit opera con tre agenti AI, ognuno con un ruolo preciso. Gli agenti non sono persone diverse — è la stessa AI (Claude) che opera in modo diverso in base al ruolo attivato.
 
 ### Agente 1 — CTO
 
@@ -392,7 +392,7 @@ Ogni BU opera con tre agenti AI, ognuno con un ruolo preciso. Gli agenti non son
 **Scope:**
 - Ricerca di mercato su un tema specifico
 - Verifica e valutazione fonti esterne
-- Analisi delle metriche della BU
+- Analisi delle metriche della Engine Unit
 - Competitive intelligence
 - Reportistica periodica
 
@@ -402,7 +402,7 @@ Ogni BU opera con tre agenti AI, ognuno con un ruolo preciso. Gli agenti non son
 
 ## 13. Checklist di apertura
 
-Da completare prima del lancio pubblico della BU. Nessuna scorciatoia.
+Da completare prima del lancio pubblico della Engine Unit. Nessuna scorciatoia.
 
 ### Patrimonio
 
@@ -411,7 +411,7 @@ Da completare prima del lancio pubblico della BU. Nessuna scorciatoia.
 
 ### Sequenza logica (in ordine)
 
-- [ ] `vision.md` — dove va questa BU
+- [ ] `vision.md` — dove va questa Engine Unit
 - [ ] `proposta-di-valore.md` — a chi, cosa, perché noi
 - [ ] `avatar.md` — profilo cliente ideale completo
 - [ ] `revenue-model.md` — prodotto e prezzo definiti
@@ -446,7 +446,7 @@ Da completare prima del lancio pubblico della BU. Nessuna scorciatoia.
 
 ## 14. Checklist di manutenzione
 
-Da eseguire ogni mese per ogni BU attiva.
+Da eseguire ogni mese per ogni Engine Unit attiva.
 
 ### Contenuti
 
@@ -477,7 +477,7 @@ Da eseguire ogni mese per ogni BU attiva.
 
 ## 15. Checklist di crescita
 
-Da valutare ogni trimestre. Si usa per decidere se e come accelerare la crescita di una BU.
+Da valutare ogni trimestre. Si usa per decidere se e come accelerare la crescita di una Engine Unit.
 
 ### Prerequisiti per passare da Fase 0 a Fase 1
 
@@ -497,32 +497,32 @@ Da valutare ogni trimestre. Si usa per decidere se e come accelerare la crescita
 
 ### Domande da porsi ogni trimestre
 
-1. La BU sta crescendo? Se no, perché? Contenuti, funnel o mercato sbagliato?
+1. La Engine Unit sta crescendo? Se no, perché? Contenuti, funnel o mercato sbagliato?
 2. Il pubblico sta diventando più fedele? (tasso apertura in crescita?)
 3. C'è una domanda di monetizzazione? (click sulle CTA, risposte alle email?)
 4. Il modello è duplicabile su altri mercati o verticali?
-5. La BU ha bisogno di più risorse o di più tempo?
+5. La Engine Unit ha bisogno di più risorse o di più tempo?
 
 ---
 
 ## Come usare questo Blueprint
 
-**Per creare una nuova BU:**
+**Per creare una nuova Engine Unit:**
 
-1. Copia la cartella `knowledge-core/business-units/[nome-bu]/` (struttura vuota)
+1. Copia la cartella `knowledge-core/engine-units/[nome-bu]/` (struttura vuota)
 2. Compila `brand.md` per primo — classifica ogni elemento come ESISTENTE / DA DOCUMENTARE / DA DEFINIRE
 3. Segui la sequenza logica degli Step 1→9, in ordine
 4. Completa la checklist di apertura (sezione §13)
 5. Lancia
 
-**Per valutare una BU esistente:**
+**Per valutare una Engine Unit esistente:**
 
-1. Confronta la BU con le fasi in sezione §6
+1. Confronta la Engine Unit con le fasi in sezione §6
 2. Esegui la checklist di manutenzione (sezione §14)
 3. Esegui la checklist di crescita (sezione §15)
 4. Aggiorna i KPI nella dashboard
 
 ---
 
-*Business Units Blueprint v0.2 — Entrate Extra Operating System*  
-*Prossima revisione: al completamento della Fase 1 di almeno una BU*
+*Engine Units Blueprint v0.2 — Entrate Extra Operating System*  
+*Prossima revisione: al completamento della Fase 1 di almeno una Engine Unit*

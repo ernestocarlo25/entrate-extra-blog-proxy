@@ -8,7 +8,7 @@
 
 ---
 
-## Dove sta andando questa BU
+## Dove sta andando questa Engine Unit
 
 [Descrizione del futuro a 3-5 anni. Non aspirazioni generiche — dove si è determinati ad arrivare.]
 
@@ -26,7 +26,7 @@
 
 ---
 
-## Cosa non sarà mai questa BU
+## Cosa non sarà mai questa Engine Unit
 
 [Limiti e perimetro. Cosa si esclude consapevolmente.]
 

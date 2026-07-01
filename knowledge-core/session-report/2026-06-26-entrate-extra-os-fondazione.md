@@ -48,7 +48,7 @@ L'obiettivo iniziale era operativo (newsletter + contenuti). A metà sessione il
 
 **Knowledge Core v1.0:**
 - 14 cartelle create con README in ciascuna
-- Struttura: manifesto, operating-blueprint, decisioni-strategiche, business-units (4 BU), ruoli, processi, dashboard, session-report, roadmap
+- Struttura: manifesto, operating-blueprint, decisioni-strategiche, engine-units (4 Engine Unit), ruoli, processi, dashboard, session-report, roadmap
 - Commit: `feat: Knowledge Core v1.0 — governance structure`
 
 **Foundation Freeze:**
@@ -57,7 +57,7 @@ L'obiettivo iniziale era operativo (newsletter + contenuti). A metà sessione il
 - Commit: `feat: Knowledge Core — Foundation Freeze`
 
 **Constitution v0.1:**
-- `vision.md`: Business Operating Platform AI-Native, crescita distribuita, ecosistema multi-BU
+- `vision.md`: Business Operating Platform AI-Native, crescita distribuita, ecosistema multi-Engine Unit
 - `mission.md`: strumenti, automazioni e agenti AI per persone comuni; controllo umano delle decisioni
 - `principles.md`: i 10 principi dell'OS (Semplicità, Business Continuity, Single Source of Truth, No Single Platform Dependency, Modularità, Duplicabilità, Sicurezza, Documentazione, Versionamento, CEO Supervisiona)
 - `governance.md`: ruoli CEO/AI, cosa richiede approvazione, KC come legge
@@ -65,18 +65,18 @@ L'obiettivo iniziale era operativo (newsletter + contenuti). A metà sessione il
 **RUNBOOK v0.1:**
 - Manuale operativo completo: architettura, servizi, env vars, flussi, sicurezza, chiavi API, backup, rischi noti, business continuity, disaster recovery, manutenzione, onboarding nuovo CTO
 
-**Business Units Blueprint v0.1 → v0.2:**
+**Engine Units Blueprint v0.1 → v0.2:**
 - v0.1: struttura, documentazione, standard, dashboard, KPI, repository, asset, social, funnel, automazioni, agenti AI, 3 checklist
 - v0.2: introdotti 3 stati (ESISTENTE / DA DOCUMENTARE / DA DEFINIRE), brand separato dalla sequenza come patrimonio, nuova sequenza a 9 step, aggiunto customer-journey.md, audience.md rinominato avatar.md
 
-**Business Unit CGV (Come Guadagnare Viaggiando):**
+**Engine Unit CGV (Come Guadagnare Viaggiando):**
 - 9 file creati su Blueprint v0.1: README, brand, audience, funnel, revenue-model, piano-editoriale, kpi, automazioni, agenti-ai
 - Aggiunto `proposta-di-valore.md` durante migrazione parziale a v0.2
 - Nota: CGV avviata sulla v0.1, migrazione completata nello Sprint 1
 
-**BU Template:**
-- 12 file blank in `knowledge-core/templates/bu-template/`
-- Pronti per clonazione su ogni nuova BU
+**Engine Unit Template:**
+- 12 file blank in `knowledge-core/templates/engine-unit-template/`
+- Pronti per clonazione su ogni nuova Engine Unit
 
 ---
 
@@ -88,7 +88,7 @@ L'obiettivo iniziale era operativo (newsletter + contenuti). A metà sessione il
 | 2 | "Se non è scritto qui, non esiste" | Eliminare dipendenza dalla memoria delle persone |
 | 3 | Constitution sostituisce il Manifesto | Evitare duplicazione di documenti fondativi |
 | 4 | Brand = patrimonio, non step della roadmap | Un brand già esistente non si definisce, si censisce |
-| 5 | Sequenza logica BU: vision → proposta → avatar → revenue → journey → funnel → editoriale → kpi → automazioni | Le dipendenze reali tra i documenti impongono questo ordine |
+| 5 | Sequenza logica Engine Unit: vision → proposta → avatar → revenue → journey → funnel → editoriale → kpi → automazioni | Le dipendenze reali tra i documenti impongono questo ordine |
 | 6 | 3 stati: ESISTENTE / DA DOCUMENTARE / DA DEFINIRE | Evitare confusione tra "non scritto" e "non esiste" |
 | 7 | CTA newsletter → "Leggi il Blog" | La Community non esiste ancora |
 | 8 | Fonti newsletter sempre verificate + archiviate | Episodio critico: link a contenuti non esistenti |
@@ -130,7 +130,7 @@ L'obiettivo iniziale era operativo (newsletter + contenuti). A metà sessione il
 | Migrazione immagini da catbox.moe a Cloudflare R2 | Media | Rischio identificato: nessuna garanzia di uptime |
 | Creare standard/ (standard-editoriale.md etc.) | Media | Referenziati in Blueprint e agenti-ai.md ma non esistono |
 | Rotazione Google AI Studio API key | Alta | Non ancora ruotata dalla sessione di fondazione |
-| Popolare Entrate Extra BU con documenti Blueprint v0.2 | Media | Solo README.md esiste |
+| Popolare Entrate Extra Engine Unit con documenti Blueprint v0.2 | Media | Solo README.md esiste |
 | Cluster C Network Marketing | Bassa | Pianificato nel piano editoriale |
 | Newsletter puntata #02 (tema Investimenti) | Media | Target: 10 luglio 2026 |
 
