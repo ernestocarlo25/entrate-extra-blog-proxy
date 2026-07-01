@@ -1,14 +1,35 @@
-# Business Units Blueprint v0.1
+# Business Units Blueprint v0.2
 
-**Versione:** 0.1  
+**Versione:** 0.2  
 **Data:** 1 luglio 2026  
 **Scopo:** Modello standard per la creazione di una nuova Business Unit  
 **Come si usa:** Clona questo documento, sostituisci `[NOME_BU]` con il nome del brand, completa ogni sezione.
+
+**Modifiche dalla v0.1:**
+- Introdotti tre stati: ESISTENTE / DA DOCUMENTARE / DA DEFINIRE
+- Brand separato dalla sequenza logica — è un patrimonio, non uno step
+- Nuova sequenza logica a 9 step
+- Aggiunto Customer Journey come step obbligatorio
+- `audience.md` rinominato `avatar.md`
 
 ---
 
 > **Principio guida**  
 > Una Business Unit non si inventa ogni volta. Si clona il Blueprint, si adatta al contesto, si lancia. Tutto ciò che non è nel Blueprint non esiste ancora — va costruito e documentato prima di considerare la BU operativa.
+
+---
+
+## I tre stati di ogni elemento
+
+Prima di compilare qualsiasi documento, assegna a ogni elemento uno di questi tre stati:
+
+| Stato | Significato |
+|---|---|
+| **ESISTENTE** | Il contenuto esiste ed è già documentato nel Knowledge Core |
+| **DA DOCUMENTARE** | Il contenuto esiste (nel brand, nella testa del CEO, in materiali offline) ma non è ancora scritto qui |
+| **DA DEFINIRE** | Il contenuto non esiste ancora — va creato e deciso |
+
+**Regola:** non confondere DA DOCUMENTARE con DA DEFINIRE. Un brand già operativo con logo, colori e tono di voce è DA DOCUMENTARE, non DA DEFINIRE. Un errore di classificazione genera lavoro inutile.
 
 ---
 
@@ -19,40 +40,107 @@ Ogni BU è una cartella autonoma nel repository GitHub. La struttura è sempre l
 ```
 business-units/
 └── [nome-bu]/
-    ├── README.md                  ← panoramica della BU
-    ├── brand.md                   ← identità visiva e tono di voce
-    ├── audience.md                ← cliente ideale
-    ├── funnel.md                  ← mappa dell'acquisizione
-    ├── revenue-model.md           ← come genera reddito
-    ├── piano-editoriale.md        ← contenuti e frequenza
-    ├── kpi.md                     ← metriche e obiettivi
-    ├── automazioni.md             ← automazioni attive
-    └── agenti-ai.md               ← AI agents assegnati e istruzioni
+    ├── README.md                  ← panoramica, fase attuale, checklist apertura
+    │
+    ├── brand.md                   ← PATRIMONIO (censimento, non step della roadmap)
+    │
+    ├── vision.md                  ← Step 1
+    ├── proposta-di-valore.md      ← Step 2
+    ├── avatar.md                  ← Step 3
+    ├── revenue-model.md           ← Step 4
+    ├── customer-journey.md        ← Step 5
+    ├── funnel.md                  ← Step 6
+    ├── piano-editoriale.md        ← Step 7
+    ├── kpi.md                     ← Step 8
+    ├── automazioni.md             ← Step 9
+    │
+    └── agenti-ai.md               ← Supporto operativo (non step sequenziale)
 ```
 
-**Regola:** nessuna BU viene considerata "aperta" finché tutti questi file non esistono, anche solo con contenuto minimo.
+**Regola:** nessuna BU viene considerata "aperta" finché tutti questi file non esistono, anche solo con contenuto minimo e stato dichiarato.
 
 ---
 
-## 2. Documentazione obbligatoria
+## 2. Il Brand come Patrimonio
 
-Prima del lancio, ogni BU deve avere questi documenti completati:
+Il brand non è uno step da costruire nella sequenza logica. È un **patrimonio preesistente** — ha un nome, una storia, un'identità visiva — e va **censito e documentato**, non inventato.
 
-| Documento | Contenuto minimo richiesto |
+`brand.md` viene compilato per primo, in modo indipendente dagli altri step. Contiene:
+
+| Elemento | Cosa documenta |
 |---|---|
-| `README.md` | Nome, stato, proposta di valore in 3 righe, link agli altri file |
-| `brand.md` | Nome, colori primari, font, tono di voce (3 aggettivi), cosa non si dice mai |
-| `audience.md` | Profilo del cliente ideale: chi è, cosa vuole, cosa teme, perché ci sceglie |
-| `funnel.md` | I 4 stadi del funnel con strumenti e trigger per ognuno |
-| `revenue-model.md` | Come la BU genera reddito: prodotti, prezzi, struttura di commissione |
-| `piano-editoriale.md` | Categorie di contenuto, frequenza, formati, canali |
-| `kpi.md` | 5-7 KPI con valore di partenza, obiettivo a 90 giorni, fonte del dato |
-| `automazioni.md` | Lista automazioni attive con trigger, azione e strumento |
-| `agenti-ai.md` | Quale AI fa cosa su questa BU, con istruzioni operative |
+| Nome | Il nome ufficiale del brand |
+| Storia | Da quando esiste, come è nato |
+| Colori | Palette HEX + RGB |
+| Font | Tipografia principale e secondaria |
+| Logo | Dove si trovano i file (SVG, PNG) |
+| Tono di voce | 3 aggettivi, esempi di come parla, cosa non dice mai |
+| Differenziazione | Come si distingue dalle altre BU dell'ecosistema |
+
+**Stato da assegnare a ogni elemento:** ESISTENTE / DA DOCUMENTARE / DA DEFINIRE
 
 ---
 
-## 3. Standard applicabili
+## 3. Sequenza logica — i 9 Step
+
+La sequenza non è arbitraria. Ogni step dipende da quello precedente. Non si salta.
+
+```
+STEP 1 — Vision
+Dove sta andando questa BU nei prossimi anni?
+        ↓
+STEP 2 — Proposta di Valore
+Cosa offre, a chi, perché è diversa dalle alternative?
+        ↓
+STEP 3 — Avatar
+Chi è esattamente il cliente ideale? Come pensa, cosa vuole, cosa teme?
+        ↓
+STEP 4 — Revenue Model
+Come genera reddito? Con quale prodotto o servizio?
+        ↓
+STEP 5 — Customer Journey
+Qual è il percorso completo del cliente, dal primo contatto alla fidelizzazione?
+        ↓
+STEP 6 — Funnel
+Quali strumenti e trigger realizzano ogni stadio del journey?
+        ↓
+STEP 7 — Piano Editoriale
+Quali contenuti, con quale frequenza, su quali canali?
+        ↓
+STEP 8 — KPI
+Con quali numeri si misura il successo di ogni step?
+        ↓
+STEP 9 — Automazioni
+Quali azioni vengono eseguite automaticamente e quando?
+```
+
+**Perché questa sequenza:**  
+Non si può costruire un funnel senza sapere chi è l'avatar. Non si può fare un piano editoriale senza sapere qual è la proposta di valore. Non si possono scegliere i KPI senza avere un revenue model. La sequenza riflette le dipendenze reali tra i documenti.
+
+---
+
+## 4. Documentazione obbligatoria
+
+Prima del lancio, ogni BU deve avere questi documenti compilati. Per ogni documento, indicare lo stato di ogni sezione.
+
+| Documento | Contenuto minimo richiesto | Dipende da |
+|---|---|---|
+| `README.md` | Nome, fase attuale, link agli altri file, checklist apertura | — |
+| `brand.md` | Tutti gli elementi del patrimonio con stato dichiarato | — |
+| `vision.md` | Dove vuole arrivare la BU in 3-5 anni | brand.md |
+| `proposta-di-valore.md` | A chi, cosa, perché noi e non altri | vision.md |
+| `avatar.md` | Profilo dettagliato del cliente ideale | proposta-di-valore.md |
+| `revenue-model.md` | Prodotto/servizio, prezzo, struttura | avatar.md |
+| `customer-journey.md` | Mappa del percorso del cliente dal primo contatto alla fidelizzazione | revenue-model.md |
+| `funnel.md` | Strumenti e trigger per ogni stadio del journey | customer-journey.md |
+| `piano-editoriale.md` | Categorie, frequenza, formati, canali | funnel.md |
+| `kpi.md` | 7 KPI standard con valore attuale e obiettivo a 90 giorni | piano-editoriale.md |
+| `automazioni.md` | Automazioni attive per fase con trigger e azione | kpi.md |
+| `agenti-ai.md` | Quale AI fa cosa, con istruzioni operative specifiche per la BU | tutti |
+
+---
+
+## 5. Standard applicabili
 
 Ogni BU eredita automaticamente gli standard dell'Operating System. Non si ridefiniscono per ogni BU — si applicano.
 
@@ -68,7 +156,7 @@ Ogni BU eredita automaticamente gli standard dell'Operating System. Non si ridef
 
 ---
 
-## 4. Dashboard e KPI
+## 6. Dashboard e KPI
 
 ### Dashboard
 
@@ -111,7 +199,7 @@ Questi 7 KPI sono obbligatori per ogni BU. I valori obiettivo cambiano in base a
 
 ---
 
-## 5. Repository
+## 7. Repository
 
 ### Setup GitHub per una nuova BU
 
@@ -148,9 +236,11 @@ Ogni BU può condividere il repository principale oppure avere un repository sep
 
 ---
 
-## 6. Asset
+## 8. Asset
 
-### Brand Kit (da creare prima del lancio)
+### Brand Kit
+
+Il brand kit non si crea al lancio — si censisce. Se il brand esiste già, i file del brand kit esistono già da qualche parte. Vanno localizzati, organizzati e documentati in `brand.md`.
 
 | Asset | Formato | Dove si conserva |
 |---|---|---|
@@ -171,7 +261,7 @@ Ogni BU può condividere il repository principale oppure avere un repository sep
 
 ---
 
-## 7. Social
+## 9. Social
 
 ### Presenza minima al lancio
 
@@ -194,9 +284,9 @@ Non si costruisce un business sul social — si costruisce sul proprio canale (e
 
 ---
 
-## 8. Funnel
+## 10. Funnel
 
-Il funnel standard di ogni BU è composto da 4 stadi. Gli strumenti cambiano in base alla BU, ma la logica è sempre la stessa.
+Il funnel standard di ogni BU è composto da 5 stadi. Gli strumenti cambiano in base alla BU, ma la logica è sempre la stessa.
 
 ```
 [AWARENESS]
@@ -232,7 +322,7 @@ Il cliente rimane attivo e porta altri
 
 ---
 
-## 9. Automazioni
+## 11. Automazioni
 
 ### Automazioni obbligatorie (Fase 0)
 
@@ -259,7 +349,7 @@ Il cliente rimane attivo e porta altri
 
 ---
 
-## 10. Agenti AI assegnati
+## 12. Agenti AI assegnati
 
 Ogni BU opera con tre agenti AI, ognuno con un ruolo preciso. Gli agenti non sono persone diverse — è la stessa AI (Claude) che opera in modo diverso in base al ruolo attivato.
 
@@ -310,16 +400,26 @@ Ogni BU opera con tre agenti AI, ognuno con un ruolo preciso. Gli agenti non son
 
 ---
 
-## 11. Checklist di apertura
+## 13. Checklist di apertura
 
 Da completare prima del lancio pubblico della BU. Nessuna scorciatoia.
 
-### Fondamenta
+### Patrimonio
 
-- [ ] Cartella BU creata in `knowledge-core/business-units/[nome-bu]/`
-- [ ] Tutti i 9 documenti obbligatori completati (sezione §2)
-- [ ] Brand kit completo: logo, colori, font
-- [ ] Dominio o sottodominio configurato (se separato da EE)
+- [ ] `brand.md` compilato con tutti gli elementi e stato dichiarato per ognuno
+- [ ] Brand kit fisicamente localizzato (file logo, palette, font)
+
+### Sequenza logica (in ordine)
+
+- [ ] `vision.md` — dove va questa BU
+- [ ] `proposta-di-valore.md` — a chi, cosa, perché noi
+- [ ] `avatar.md` — profilo cliente ideale completo
+- [ ] `revenue-model.md` — prodotto e prezzo definiti
+- [ ] `customer-journey.md` — percorso del cliente mappato
+- [ ] `funnel.md` — strumenti e trigger per ogni stadio
+- [ ] `piano-editoriale.md` — piano dei primi 30 giorni pronto
+- [ ] `kpi.md` — 7 KPI con valori di partenza e obiettivi 90gg
+- [ ] `automazioni.md` — almeno le automazioni obbligatorie di Fase 0
 
 ### Infrastruttura tecnica
 
@@ -338,13 +438,13 @@ Da completare prima del lancio pubblico della BU. Nessuna scorciatoia.
 
 ### Comunicazione
 
-- [ ] Social configurati (almeno i canali scelti in sezione §7)
+- [ ] Social configurati (almeno i canali scelti in sezione §9)
 - [ ] Bio e link aggiornati su ogni social
-- [ ] Piano editoriale dei primi 30 giorni definito
+- [ ] Piano editoriale dei primi 30 giorni approvato dal CEO
 
 ---
 
-## 12. Checklist di manutenzione
+## 14. Checklist di manutenzione
 
 Da eseguire ogni mese per ogni BU attiva.
 
@@ -375,7 +475,7 @@ Da eseguire ogni mese per ogni BU attiva.
 
 ---
 
-## 13. Checklist di crescita
+## 15. Checklist di crescita
 
 Da valutare ogni trimestre. Si usa per decidere se e come accelerare la crescita di una BU.
 
@@ -410,18 +510,19 @@ Da valutare ogni trimestre. Si usa per decidere se e come accelerare la crescita
 **Per creare una nuova BU:**
 
 1. Copia la cartella `knowledge-core/business-units/[nome-bu]/` (struttura vuota)
-2. Compila tutti i documenti obbligatori (sezione §2)
-3. Completa la checklist di apertura (sezione §11)
-4. Lancia
+2. Compila `brand.md` per primo — classifica ogni elemento come ESISTENTE / DA DOCUMENTARE / DA DEFINIRE
+3. Segui la sequenza logica degli Step 1→9, in ordine
+4. Completa la checklist di apertura (sezione §13)
+5. Lancia
 
 **Per valutare una BU esistente:**
 
-1. Confronta la BU con le fasi in sezione §4
-2. Esegui la checklist di manutenzione (sezione §12)
-3. Esegui la checklist di crescita (sezione §13)
+1. Confronta la BU con le fasi in sezione §6
+2. Esegui la checklist di manutenzione (sezione §14)
+3. Esegui la checklist di crescita (sezione §15)
 4. Aggiorna i KPI nella dashboard
 
 ---
 
-*Business Units Blueprint v0.1 — Entrate Extra Operating System*  
+*Business Units Blueprint v0.2 — Entrate Extra Operating System*  
 *Prossima revisione: al completamento della Fase 1 di almeno una BU*
