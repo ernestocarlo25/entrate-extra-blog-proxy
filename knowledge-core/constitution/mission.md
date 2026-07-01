@@ -6,39 +6,35 @@
 
 ---
 
-## Chi serviamo
+## Cosa facciamo
 
-Serviamo le persone che hanno già capito che un solo stipendio non basta — o non basterà — e vogliono muoversi concretamente per costruire fonti di reddito aggiuntive.
+Progettiamo, costruiamo e mettiamo a disposizione **strumenti, procedure, automazioni e agenti AI** che permettano a persone comuni di creare, gestire e far crescere attività imprenditoriali sostenibili.
 
-Il nostro cliente ideale è curioso, aperto all'autoimprenditorialità e diffidente verso le promesse facili. Ha già valutato opportunità nel Network Marketing, negli investimenti, nel business digitale. Vuole analisi oneste, non hype.
-
-Non serviamo chi cerca scorciatoie. Serviamo chi è disposto a costruire qualcosa di reale.
+Non servono competenze tecniche. Non servono grandi capitali. Serve un sistema — e il sistema lo costruiamo noi.
 
 ---
 
-## Cosa facciamo concretamente
+## Per chi
 
-**Blog Entrate Extra** — articoli approfonditi su Network Marketing, investimenti, opportunità di business. Ogni articolo è verificato, ben strutturato e orientato a chi vuole capire davvero prima di decidere.
+Per chi vuole avviare o far crescere un'attività ma non ha una struttura aziendale alle spalle. Per chi vuole usare l'intelligenza artificiale nel proprio business senza capire come funziona sotto il cofano. Per chi vuole risultati reali, non esperimenti.
 
-**Newsletter "L'Osservatorio"** — analisi bisettimanale sul mercato delle entrate extra. Fonti verificate, dati reali, nessun link a contenuti che non esistono.
-
-**Community** — il passo successivo, in costruzione. Il luogo dove il pubblico smette di leggere e inizia a confrontarsi e agire insieme.
+Il nostro lavoro è abbassare la barriera d'ingresso all'imprenditoria moderna. Rendere accessibile ciò che oggi è appannaggio di chi ha già risorse, team e infrastrutture.
 
 ---
 
 ## Come lo facciamo
 
-Con standard editoriali alti e nessuna concessione alla quantità a scapito della qualità.
+Costruendo sistemi che rispettano tre criteri: sono semplici da usare, sono documentati in ogni parte e sono duplicabili su nuovi contesti senza ripartire da zero.
 
-Ogni contenuto che pubblichiamo rispetta una regola semplice: **se non lo faremmo leggere a un amico serio, non lo pubblichiamo.**
-
-Le fonti sono sempre verificate. Le affermazioni sono sempre supportate da dati. Le opinioni sono sempre dichiarate come tali.
+Ogni automazione, ogni agente AI, ogni processo che costruiamo deve poter essere capito, modificato e replicato da chiunque lo gestisca — oggi o in futuro.
 
 ---
 
-## La promessa
+## Il controllo rimane sempre umano
 
-Non vendiamo sogni. Portiamo analisi, strumenti e community a chi vuole agire.
+Gli strumenti decidono cosa proporre. Le persone decidono cosa fare.
+
+L'AI esegue, analizza, costruisce e suggerisce. Le decisioni strategiche — cosa pubblicare, cosa comunicare, dove investire — restano sempre in mano alla persona che gestisce il business.
 
 ---
 

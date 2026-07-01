@@ -8,40 +8,23 @@
 
 ## Dove stiamo andando
 
-Entrate Extra diventa il punto di riferimento in Italia per chi vuole costruire reddito al di fuori del lavoro tradizionale.
+Costruire la prima **Business Operating Platform AI-Native** che permetta a persone e organizzazioni di sviluppare business attraverso sistemi semplici, sicuri, documentati e duplicabili.
 
-Non un blog. Non una newsletter. Una **Business Community** — il luogo dove le persone che vogliono muoversi concretamente trovano analisi serie, strumenti reali e altri imprenditori con cui confrontarsi.
-
----
-
-## L'ecosistema che stiamo costruendo
-
-L'azienda non è un unico prodotto. È una costellazione di brand verticali — le Business Units — ognuna focalizzata su un segmento specifico del mercato delle entrate alternative:
-
-- **Entrate Extra** — il brand ombrello, la community centrale
-- **Come Guadagnare Viaggiando** — reddito e mobilità geografica
-- **Oro Reale** — protezione del patrimonio con asset reali
-- **Orygn** — in definizione
-
-Ogni brand opera in modo indipendente ma condivide la stessa infrastruttura, gli stessi standard e gli stessi valori. Se un brand cresce, non dipende dagli altri. Se un brand si ferma, gli altri continuano.
+L'obiettivo non è un prodotto. È un modello: la dimostrazione che un'azienda moderna può essere costruita e gestita dalla collaborazione tra persone, intelligenza artificiale e automazioni — senza strutture pesanti, senza costi fissi insostenibili, senza dipendere da una singola piattaforma.
 
 ---
 
-## Il principio guida
+## Il modello di crescita
 
-Costruiamo lentamente e solidamente.
+Crescita distribuita. Non un grande brand centrale con tutto concentrato in un punto — ma un ecosistema di Business Units indipendenti, ognuna focalizzata su un mercato specifico, tutte costruite sullo stesso sistema operativo.
 
-Prima le fondamenta — poi la crescita. Prima la qualità — poi il volume. Prima il sistema — poi la scala.
-
-Un'azienda costruita su basi fragili crolla alla prima pressione. Un'azienda costruita su basi solide può sopportare qualsiasi cambiamento di mercato, tecnologia o contesto.
+Questo modello ha un vantaggio concreto: ogni nuova BU parte da fondamenta già costruite. Non si ricomincia da zero. Si duplica ciò che funziona, si adatta al nuovo contesto, si scala.
 
 ---
 
-## Cosa non siamo
+## Cosa stiamo costruendo oggi
 
-Non vendiamo sogni. Non promettiamo libertà finanziaria in 30 giorni. Non siamo un corso online con foto davanti a Ferrari.
-
-Siamo un'azienda seria che lavora con persone serie, su opportunità reali, con metodo.
+Le Business Units attive e in sviluppo — Entrate Extra, Come Guadagnare Viaggiando, Oro Reale, Orygn — sono la prima implementazione di questo modello. Non sono il prodotto finale. Sono la prova che il sistema funziona.
 
 ---
 
