@@ -1,3 +1,5 @@
+import { randomUUID } from 'crypto';
+
 const WELCOME_EMAIL_HTML = (firstName) => `<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
@@ -76,95 +78,230 @@ Per qualsiasi domanda, rispondi a quell'email — siamo lì.
 A presto,
 *Il Team di Entrate Extra* 🚀`;
 
-export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+// ─── UTILITIES ──────────────────────────────────────────────────────────────
 
-  const { name, email, phone } = req.body;
-  if (!email) return res.status(400).json({ error: 'Email richiesta' });
-
-  const nameParts = (name || '').trim().split(' ');
-  const firstName = nameParts[0] || 'amico';
-  const lastName = nameParts.slice(1).join(' ') || '';
-
-  const ghlHeaders = {
-    'Authorization': `Bearer ${process.env.GHL_API_KEY}`,
-    'Version': '2021-07-28',
-    'Content-Type': 'application/json'
-  };
-
-  try {
-    // 1. Create contact
-    const contactPayload = {
-      locationId: process.env.GHL_LOCATION_ID,
-      firstName,
-      lastName,
-      email,
-      tags: ['newsletter-osservatorio']
+function createLogger(correlationId) {
+  const t0 = Date.now();
+  return function log(level, event, extra = {}) {
+    const entry = {
+      ts: new Date().toISOString(),
+      level,
+      correlationId,
+      event,
+      durationMs: Date.now() - t0,
+      ...extra
     };
-    if (phone) contactPayload.phone = phone;
+    const line = `[subscribe] ${JSON.stringify(entry)}`;
+    if (level === 'ERROR') console.error(line);
+    else if (level === 'WARN') console.warn(line);
+    else console.log(line);
+  };
+}
 
-    const contactRes = await fetch('https://services.leadconnectorhq.com/contacts/', {
-      method: 'POST',
-      headers: ghlHeaders,
-      body: JSON.stringify(contactPayload)
-    });
-    const contactData = await contactRes.json();
+function emailDomain(email) {
+  return email.split('@')[1] ?? 'unknown';
+}
 
-    // Get contactId — if duplicate, search for existing contact
-    let contactId = contactData.contact?.id;
-    if (!contactId) {
-      const searchRes = await fetch(
-        `https://services.leadconnectorhq.com/contacts/?locationId=${process.env.GHL_LOCATION_ID}&query=${encodeURIComponent(email)}`,
-        { headers: ghlHeaders }
-      );
-      const searchData = await searchRes.json();
-      contactId = searchData.contacts?.[0]?.id;
-    }
+function isValidEmail(email) {
+  return typeof email === 'string' && /.+@.+\..+/.test(email.trim());
+}
 
-    // 2. Send welcome email
-    if (contactId) {
-      const emailRes = await fetch('https://services.leadconnectorhq.com/conversations/messages', {
-        method: 'POST',
-        headers: ghlHeaders,
-        body: JSON.stringify({
-          type: 'Email',
-          contactId,
-          emailTo: email,
-          emailFrom: 'info@entrateextra.com',
-          emailFromName: "L'Osservatorio di Entrate Extra",
-          subject: `Sei dentro, ${firstName}. Ecco da dove iniziare.`,
-          html: WELCOME_EMAIL_HTML(firstName),
-          locationId: process.env.GHL_LOCATION_ID
-        })
-      });
-      const emailData = await emailRes.json();
-      console.log('[subscribe] email status:', emailRes.status, JSON.stringify(emailData).slice(0, 300));
-
-      // 3. Send WhatsApp/SMS if phone provided
-      if (phone) {
-        const smsRes = await fetch('https://services.leadconnectorhq.com/conversations/messages', {
-          method: 'POST',
-          headers: ghlHeaders,
-          body: JSON.stringify({
-            type: 'SMS',
-            contactId,
-            message: WELCOME_SMS(firstName),
-            locationId: process.env.GHL_LOCATION_ID
-          })
-        });
-        const smsData = await smsRes.json();
-        console.log('[subscribe] sms status:', smsRes.status, JSON.stringify(smsData).slice(0, 200));
-      }
-    }
-
-    return res.status(200).json({ success: true, contactId });
-  } catch (err) {
-    console.error('[subscribe] error:', err.message);
-    return res.status(500).json({ error: err.message });
+async function ghlFetch(url, options) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8_000);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
   }
 }
 
+// ─── CONSTANTS ───────────────────────────────────────────────────────────────
+
+const GHL_CONTACTS_URL = 'https://services.leadconnectorhq.com/contacts/';
+const GHL_MESSAGES_URL = 'https://services.leadconnectorhq.com/conversations/messages';
+
+// ─── HANDLER ─────────────────────────────────────────────────────────────────
+
+export default async function handler(req, res) {
+  const correlationId = randomUUID();
+
+  res.setHeader('X-Correlation-Id', correlationId);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, event: 'METHOD_NOT_ALLOWED', error: 'Method not allowed' });
+  }
+
+  const log = createLogger(correlationId);
+  const { name, email: rawEmail, phone } = req.body ?? {};
+  const email = typeof rawEmail === 'string' ? rawEmail.trim().toLowerCase() : '';
+
+  // ── Validation ─────────────────────────────────────────────────────────────
+  if (!email) {
+    log('WARN', 'VALIDATION_ERROR', { field: 'email', reason: 'missing' });
+    return res.status(400).json({ success: false, event: 'MISSING_EMAIL', error: 'Email richiesta' });
+  }
+  if (!isValidEmail(email)) {
+    log('WARN', 'VALIDATION_ERROR', { field: 'email', reason: 'invalid_format' });
+    return res.status(400).json({ success: false, event: 'INVALID_EMAIL', error: 'Formato email non valido' });
+  }
+
+  const domain = emailDomain(email);
+  const nameParts = (name ?? '').trim().split(' ');
+  const firstName = nameParts[0] || 'amico';
+  const lastName = nameParts.slice(1).join(' ');
+
+  const ghlHeaders = {
+    Authorization: `Bearer ${process.env.GHL_API_KEY}`,
+    Version: '2021-07-28',
+    'Content-Type': 'application/json'
+  };
+
+  const contactPayload = {
+    locationId: process.env.GHL_LOCATION_ID,
+    firstName,
+    lastName,
+    email,
+    tags: ['newsletter-osservatorio']
+  };
+  if (phone) contactPayload.phone = phone;
+
+  try {
+    // ── Step 1: Create contact ─────────────────────────────────────────────
+    let cRes, cData;
+    try {
+      cRes = await ghlFetch(GHL_CONTACTS_URL, {
+        method: 'POST',
+        headers: ghlHeaders,
+        body: JSON.stringify(contactPayload)
+      });
+      cData = await cRes.json();
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        log('ERROR', 'GHL_TIMEOUT', { phase: 'contact_creation', domain });
+        return res.status(504).json({ success: false, event: 'TIMEOUT', error: 'Il servizio non risponde. Riprova tra qualche istante.' });
+      }
+      throw err;
+    }
+
+    let contactId = cData.contact?.id ?? null;
+    let isNew = false;
+
+    if (cRes.ok && contactId) {
+      // Happy path: new contact created
+      isNew = true;
+
+    } else if (cRes.status === 401) {
+      log('ERROR', 'GHL_AUTH_ERROR', { domain, ghlStatus: 401 });
+      return res.status(502).json({ success: false, event: 'SERVICE_ERROR', error: 'Il servizio non è disponibile al momento. Riprova tra qualche minuto.' });
+
+    } else if (cRes.status === 429) {
+      log('WARN', 'GHL_RATE_LIMIT', { domain, ghlStatus: 429 });
+      return res.status(429).json({ success: false, event: 'RATE_LIMIT', error: 'Il servizio è momentaneamente occupato. Riprova tra qualche secondo.' });
+
+    } else if (cRes.status === 422 || !contactId) {
+      // ── Potential duplicate: search for existing contact ─────────────────
+      // 422 = GHL validation/duplicate; fallback also covers 2xx with no id
+      let sData;
+      try {
+        const sRes = await ghlFetch(
+          `${GHL_CONTACTS_URL}?locationId=${process.env.GHL_LOCATION_ID}&query=${encodeURIComponent(email)}`,
+          { headers: ghlHeaders }
+        );
+        sData = await sRes.json();
+      } catch (searchErr) {
+        if (searchErr.name === 'AbortError') {
+          log('ERROR', 'GHL_TIMEOUT', { phase: 'contact_search', domain });
+          return res.status(504).json({ success: false, event: 'TIMEOUT', error: 'Il servizio non risponde. Riprova tra qualche istante.' });
+        }
+        throw searchErr;
+      }
+
+      contactId = sData.contacts?.[0]?.id ?? null;
+      if (!contactId) {
+        // Not a duplicate — genuine GHL validation error
+        log('WARN', 'GHL_VALIDATION_ERROR', { domain, ghlStatus: cRes.status });
+        return res.status(422).json({ success: false, event: 'VALIDATION_ERROR', error: 'Dati non validi. Controlla email e numero di telefono.' });
+      }
+      // Duplicate confirmed: existing contact found
+      isNew = false;
+
+    } else if (cRes.status >= 500) {
+      log('ERROR', 'GHL_SERVER_ERROR', { domain, ghlStatus: cRes.status });
+      return res.status(502).json({ success: false, event: 'SERVICE_ERROR', error: 'Errore temporaneo del servizio. Riprova tra qualche minuto.' });
+
+    } else {
+      log('ERROR', 'GHL_UNEXPECTED', { domain, ghlStatus: cRes.status });
+      return res.status(502).json({ success: false, event: 'SERVICE_ERROR', error: 'Errore inatteso. Riprova tra qualche minuto.' });
+    }
+
+    // ── Safety guard: contactId must be resolved by this point ────────────
+    if (!contactId) {
+      log('ERROR', 'CONTACT_ID_MISSING', { domain, ghlStatus: cRes.status });
+      return res.status(502).json({ success: false, event: 'SERVICE_ERROR', error: 'Errore durante la registrazione. Riprova.' });
+    }
+
+    // ── Step 2: Welcome email (new contacts only) ──────────────────────────
+    let emailSent = false;
+    let smsSent = false;
+
+    if (isNew) {
+      try {
+        const eRes = await ghlFetch(GHL_MESSAGES_URL, {
+          method: 'POST',
+          headers: ghlHeaders,
+          body: JSON.stringify({
+            type: 'Email',
+            contactId,
+            emailTo: email,
+            emailFrom: 'info@entrateextra.com',
+            emailFromName: "L'Osservatorio di Entrate Extra",
+            subject: `Sei dentro, ${firstName}. Ecco da dove iniziare.`,
+            html: WELCOME_EMAIL_HTML(firstName),
+            locationId: process.env.GHL_LOCATION_ID
+          })
+        });
+        emailSent = eRes.ok;
+        if (!emailSent) log('WARN', 'EMAIL_FAILED', { domain, contactId, emailStatus: eRes.status });
+      } catch (emailErr) {
+        log('WARN', 'EMAIL_FAILED', { domain, contactId, error: emailErr.message });
+      }
+
+      // ── Step 3: SMS (new contacts with phone only) ─────────────────────
+      if (phone) {
+        try {
+          const smsRes = await ghlFetch(GHL_MESSAGES_URL, {
+            method: 'POST',
+            headers: ghlHeaders,
+            body: JSON.stringify({
+              type: 'SMS',
+              contactId,
+              message: WELCOME_SMS(firstName),
+              locationId: process.env.GHL_LOCATION_ID
+            })
+          });
+          smsSent = smsRes.ok;
+          if (!smsSent) log('WARN', 'SMS_FAILED', { domain, contactId, smsStatus: smsRes.status });
+        } catch (smsErr) {
+          log('WARN', 'SMS_FAILED', { domain, contactId, error: smsErr.message });
+        }
+      }
+
+      log('INFO', 'CONTACT_CREATED', { domain, contactId, emailSent, smsSent });
+      return res.status(201).json({ success: true, event: 'CONTACT_CREATED' });
+    }
+
+    // Existing contact: no email, no SMS, still a success
+    log('INFO', 'CONTACT_ALREADY_EXISTS', { domain, contactId, emailSent: false });
+    return res.status(200).json({ success: true, event: 'CONTACT_ALREADY_EXISTS' });
+
+  } catch (err) {
+    // Network-level error: DNS failure, connection refused
+    log('ERROR', 'GHL_NETWORK_ERROR', { domain, error: err.message });
+    return res.status(502).json({ success: false, event: 'SERVICE_UNREACHABLE', error: 'Il servizio non è raggiungibile. Riprova.' });
+  }
+}
